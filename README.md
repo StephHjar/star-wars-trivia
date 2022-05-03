@@ -18,7 +18,7 @@ The Star Wars Legends Trivia site is a fully responsive website that allows play
 
 - __The Game Area__
 
-  -  
+  -  Questions are displayed in a random order (for replayability), and answers are also displayed randomly (so players can't simply memorize the order of the answers). 
 
 ![Game](IMAGE TO GO HERE)
 
@@ -87,6 +87,7 @@ You can break the credits section up into Content and Media, depending on what y
 
 ### Content 
 
+- All trivia questions were written by the developer. Answers were verified for accuracy on [Wookieepedia](https://starwars.fandom.com/wiki/Main_Page)
 - The README structure and suggested content was from [Code Institute's Love Maths README template](https://github.com/Code-Institute-Solutions/readme-love-maths/blob/master/README.md).
 
 ### Media
