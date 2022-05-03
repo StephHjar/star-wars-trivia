@@ -11,5 +11,6 @@ html {
 }
 
 .heading img {
-    max-width: 50rem;
+    height: auto;
+    max-width: 100%;
 }
