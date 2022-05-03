@@ -1,11 +1,15 @@
-body {
+html {
     background-color: #000;
-    background-image: url("../images/background.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 1000px;
+    background: url("../images/background.webp") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
 }
 
 .heading {
     text-align: center;
+}
+
+.heading img {
+    max-width: 50rem;
 }
