@@ -1,5 +1,11 @@
 body {
-    background-color: black;
-    background-image: url("../images/shutterstock_1550816240.webp");
-    background-size: cover;
+    background-color: #000;
+    background-image: url("../images/background.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 1000px;
+}
+
+.heading {
+    text-align: center;
 }
