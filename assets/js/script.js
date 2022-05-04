@@ -1,5 +1,7 @@
-function runGame() {
+document.addEventListener("click", runGame);
 
+function runGame() {
+    document.getElementsByClassName("content")[0].style.display = "block";
 }
 
 function displayQuestion() {
