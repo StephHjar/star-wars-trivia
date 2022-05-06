@@ -1,5 +1,11 @@
 document.addEventListener("click", startGame);
 
+let buttons = document.getElementsByTagName("button");
+
+for (let button of buttons) {
+    button.addEventListener("click", checkAnswer);
+}
+
 let questions = [{
     "question": "What is Luke Skywalker’s wife Mara’s last name?",
     "options": ["Ruby", "Jade", "Garnet"],
@@ -44,6 +50,9 @@ let questions = [{
 
 let currentQuestion = questions[questions.length * Math.random() | 0];
 
+/**
+ * Initiates gameplay when the player clicks anywhere on the page
+ */
 function startGame() {
     document.getElementsByClassName("content")[0].style.display = "block";
     runGame();
@@ -59,7 +68,7 @@ function runGame() {
 }
 
 function checkAnswer() {
-
+    console.log("checking answer");
 }
 
 function incrementScore() {
