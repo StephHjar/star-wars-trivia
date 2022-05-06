@@ -55,7 +55,6 @@ footer {
     font-size: 1.5rem;
     margin: 0.5rem;
     padding: 0.5rem;
-    text-transform: uppercase;
 }
 
 .btn:hover {
@@ -63,7 +62,7 @@ footer {
 }
 
 .btn:focus {
-    box-shadow: none;
+    box-shadow: -5px -5px;
 }
 
 /* footer */

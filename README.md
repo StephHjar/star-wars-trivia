@@ -63,6 +63,10 @@ If this section grows too long, you may want to split it off into a separate fil
       - Largest function has 10 statements in it, while the median is 3.
       - The most complex function has a cyclomatic complexity value of 4 while the median is 2.
 
+### Fixed Bugs
+
+- The check answer function was not working correctly because the answers in each button were set to 'text-transform: uppercase', which meant they did not match the text in the array. Removed the text-transform and the function started working correctly.
+
 ### Unfixed Bugs
 
 You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
