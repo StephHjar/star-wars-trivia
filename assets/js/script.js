@@ -48,6 +48,8 @@ let questions = [{
     "answer": "Jagged Fel"
 }]
 
+let currentQuestion = questions[questions.length * Math.random() | 0];
+
 /**
  * Initiates gameplay when the player clicks anywhere on the page
  */
@@ -57,7 +59,6 @@ function startGame() {
 }
 
 function runGame() {
-    let currentQuestion = questions[questions.length * Math.random() | 0];
     for (let i = 0; i < questions.length; i++) {
         document.getElementsByClassName("question-area")[0].innerHTML = currentQuestion.question;
         document.getElementsByClassName("btn-a")[0].innerHTML = currentQuestion.options[0];
@@ -67,9 +68,10 @@ function runGame() {
 }
 
 function checkAnswer() {
-    let currentQuestion = questions[questions.length * Math.random() | 0];
     let answer = currentQuestion.answer;
     let response = this.innerText;
+    console.log(answer);
+    console.log(response);
     if (answer === response) {
         incrementScore();
         this.style.backgroundColor = "green";
@@ -81,8 +83,12 @@ function checkAnswer() {
     }
 }
 
+/**
+ * Increases the score by one for every correct answer
+ */
 function incrementScore() {
-    console.log("Score went up!")
+    let oldScore = parseInt(document.getElementsByClassName("score")[0].innerText);
+    document.getElementsByClassName("score")[0].innerText = ++oldScore;
 }
 
 function displayResult() {
