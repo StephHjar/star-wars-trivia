@@ -62,7 +62,7 @@ footer {
 }
 
 .btn:focus {
-    box-shadow: -5px -5px;
+    box-shadow: none;
 }
 
 /* footer */
