@@ -4,15 +4,12 @@
 
  let currentQuestion = null;
  let buttons = document.getElementsByTagName("button");
- let CURRENT_QUESTION_COUNT = 0
+ let CURRENT_QUESTION_COUNT = 0;
  let MAX_QUESTION = 10;
 
  document.addEventListener("click", startGame);
 
  let repeatedQuestion = []
-
-
-
 
  /**
   * Initiates gameplay when the player clicks anywhere on the page
@@ -23,11 +20,13 @@
  }
 
  function renderNextQuestion() {
-
      if (CURRENT_QUESTION_COUNT >= MAX_QUESTION) {
          return false;
      }
-     currentQuestion = getRandomQuestion()
+     for (let button of buttons) {
+         button.style.backgroundColor = "yellow";
+     }
+     currentQuestion = getRandomQuestion();
      document.getElementsByClassName("question-area")[0].innerHTML = currentQuestion.question;
      document.getElementsByClassName("btn-a")[0].innerHTML = currentQuestion.options[0];
      document.getElementsByClassName("btn-b")[0].innerHTML = currentQuestion.options[1];
@@ -50,7 +49,6 @@
      }
  }
 
-
  function checkAnswer() {
      let answer = currentQuestion.answer;
      let response = this.innerText;
@@ -61,7 +59,6 @@
          this.style.backgroundColor = "green";
          renderNextQuestion();
      } else {
-         console.log("Sorry, you got it wrong!");
          this.style.backgroundColor = "red";
          renderNextQuestion();
      }
