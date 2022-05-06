@@ -1,8 +1,5 @@
 document.addEventListener("click", startGame);
 
-let currentQuestion = 0;
-let score = 0;
-
 let questions = [{
     "question": "What is Luke Skywalker’s wife Mara’s last name?",
     "options": ["Ruby", "Jade", "Garnet"],
@@ -44,10 +41,8 @@ let questions = [{
     "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
     "answer": "Jagged Fel"
 }]
-let question = question['question'];
-let options = question['options'];
-let answer = question['answer'];
 
+let currentQuestion = questions[questions.length * Math.random() | 0];
 
 function startGame() {
     document.getElementsByClassName("content")[0].style.display = "block";
@@ -55,27 +50,12 @@ function startGame() {
 }
 
 function runGame() {
-    let questions = [{
-        "question": "What is Luke Skywalker’s wife Mara’s last name?",
-        "options": ["Ruby", "Jade", "Garnet"],
-        "answer": "Jade"
-    }, {
-        "question": "Tenel Ka Djo is princess and eventually queen of what planet?",
-        "options": ["Hapes", "Dathomir", "Yavin IV"],
-        "answer": "Hapes"
-    }];
-
     for (let i = 0; i < questions.length; i++) {
-        document.getElementsByClassName("question-area")[0].innerHTML = questions[i].question;
-        document.getElementsByClassName("btn-a")[0].innerHTML = questions[i].options[0];
-        document.getElementsByClassName("btn-b")[0].innerHTML = questions[i].options[1];
-        document.getElementsByClassName("btn-c")[0].innerHTML = questions[i].options[2];
-        console.log("Testing")
+        document.getElementsByClassName("question-area")[0].innerHTML = currentQuestion.question;
+        document.getElementsByClassName("btn-a")[0].innerHTML = currentQuestion.options[0];
+        document.getElementsByClassName("btn-b")[0].innerHTML = currentQuestion.options[1];
+        document.getElementsByClassName("btn-c")[0].innerHTML = currentQuestion.options[2];
     }
-}
-
-function displayQuestion() {
-
 }
 
 function checkAnswer() {
