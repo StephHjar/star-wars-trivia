@@ -68,11 +68,20 @@ function runGame() {
 }
 
 function checkAnswer() {
-    console.log("checking answer");
+    let answer = currentQuestion.answer;
+    let response = this.innerText;
+    console.log(answer);
+    console.log(response);
+    if (answer === response) {
+        incrementScore();
+        console.log("Correct!");
+    } else {
+        console.log("Sorry, you got it wrong!");
+    }
 }
 
 function incrementScore() {
-
+    console.log("Score went up!")
 }
 
 function displayResult() {
