@@ -105,6 +105,7 @@ You can break the credits section up into Content and Media, depending on what y
 - The background photo is from [Shutterstock](https://www.shutterstock.com/image-vector/star-warp-hyperspace-jump-traces-moving-1550816240)
 - [CloudConvert](https://cloudconvert.com/) was used to convert all images to WEBP format.
 - The R2D2 icon used in the Favicon is from [Icon-Icons.com](https://icon-icons.com/download/34499/PNG/512/).
+- Lightsaber image in the opening scroll is by Robert W. Schönholz on [Pixabay](https://pixabay.com/users/robertschoenholz-3164230/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2908144>)
 - [Favicon.io](https://favicon.io/) was used to create the favicon. 
 - [Google Fonts](https://fonts.google.com/specimen/Oswald) was used for the Oswald font.
 - [TinyPNG](https://tinypng.com/) was used to compress images.

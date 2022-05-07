@@ -17,6 +17,7 @@
   * Initiates gameplay when the player clicks anywhere on the page
   */
  function startGame() {
+     document.getElementsByClassName("scroll-div")[0].style.display = "none";
      document.getElementsByClassName("content")[0].style.display = "block";
      renderNextQuestion();
  }
