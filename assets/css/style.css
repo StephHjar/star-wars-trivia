@@ -61,7 +61,7 @@ footer {
     box-shadow: 5px 5px;
 }
 
-.btn:focus {
+.btn:active {
     box-shadow: none;
 }
 

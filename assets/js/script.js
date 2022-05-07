@@ -28,7 +28,6 @@
          return false;
      }
      for (let button of buttons) {
-
          button.style = null;
      }
      currentQuestion = getRandomQuestion();
