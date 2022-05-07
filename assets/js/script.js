@@ -59,22 +59,22 @@
  }
 
  /**
-  * Runs checkAnswer function when a button is clicked
+  * Runs checkAnswer function when a button is clicked and populates the next question
   */
  function handleClickEvent() {
      console.log("handleClickEvent is running")
      for (let button of buttons) {
          button.addEventListener("mousedown", checkAnswer);
          button.addEventListener("mouseup", renderNextQuestion);
+         button.addEventListener("touchstart", checkAnswer);
+         button.addEventListener("touchend", renderNextQuestion);
      }
  }
-
 
  /**
   * Checks whether the user's answer is correct
   */
  function checkAnswer() {
-     console.log("checkAnswer is running")
      let answer = currentQuestion.answer;
      let response = this.innerText;
      console.log(answer);
