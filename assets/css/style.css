@@ -74,6 +74,10 @@ footer {
     animation: my-animation 10s linear infinite;
 }
 
+.scroll-text img {
+    max-width: 100%;
+}
+
 /* for Firefox */
 @-moz-keyframes my-animation {
     from {
