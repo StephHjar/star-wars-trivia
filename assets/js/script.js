@@ -11,7 +11,7 @@
      once: true
  });
 
- let repeatedQuestion = []
+ let repeatedQuestion = [];
 
  /**
   * Initiates gameplay when the player clicks anywhere on the page
@@ -25,29 +25,31 @@
   * Populates a random question in the question area and answers in the buttons
   */
  function renderNextQuestion() {
-
-     /*if (CURRENT_QUESTION_COUNT >= MAX_QUESTION) {
-         displayResult;
-     }*/
      for (let button of buttons) {
          button.style = null;
      }
-     currentQuestion = getRandomQuestion();
-     document.getElementsByClassName("question-area")[0].innerHTML = currentQuestion.question;
-     document.getElementsByClassName("btn-a")[0].innerHTML = currentQuestion.options[0];
-     document.getElementsByClassName("btn-b")[0].innerHTML = currentQuestion.options[1];
-     document.getElementsByClassName("btn-c")[0].innerHTML = currentQuestion.options[2];
-     handleClickEvent();
+     if (repeatedQuestion.length >= 10) {
+         displayResult();
+     } else {
+         currentQuestion = getRandomQuestion();
+         document.getElementsByClassName("question-area")[0].innerHTML = currentQuestion.question;
+         document.getElementsByClassName("btn-a")[0].innerHTML = currentQuestion.options[0];
+         document.getElementsByClassName("btn-b")[0].innerHTML = currentQuestion.options[1];
+         document.getElementsByClassName("btn-c")[0].innerHTML = currentQuestion.options[2];
+         handleClickEvent();
+     }
  }
 
  /**
   * Pulls a random question from the questions array
   */
  function getRandomQuestion() {
-     currentQuestion = questions[questions.length * Math.random() | 0];
+     console.log("getRandomQuestion is running")
+     currentQuestion = questions[Math.floor(Math.random() * questions.length)];
      if (repeatedQuestion.length >= 10) {
-         displayResult();
-     } else if (repeatedQuestion.indexOf(currentQuestion) >= 0) {
+         return false;
+     } else
+     if (repeatedQuestion.indexOf(currentQuestion) >= 0) {
          return getRandomQuestion();
      } else {
          repeatedQuestion.push(currentQuestion);
@@ -58,18 +60,30 @@
  /**
   * Runs checkAnswer function when a button is clicked
   */
-
  function handleClickEvent() {
+     console.log("handleClickEvent is running")
      for (let button of buttons) {
-         button.addEventListener("mousedown", checkAnswer);
-         button.addEventListener("mouseup", renderNextQuestion);
+         if (button.HTMLContent === "Play Again") {
+             console.log("playing again");
+             document.getElementsByClassName("btn-a")[0].addEventListener("mouseup",
+                 newGame);
+         } else if (button.HTMLContent === "Share Results") {
+             console.log("sharing results");
+             button.addEventListener("mouseup",
+                 shareResult);
+         } else {
+             button.addEventListener("mousedown", checkAnswer);
+             button.addEventListener("mouseup", renderNextQuestion);
+         }
      }
  }
+
 
  /**
   * Checks whether the user's answer is correct
   */
  function checkAnswer() {
+     console.log("checkAnswer is running")
      let answer = currentQuestion.answer;
      let response = this.innerText;
      console.log(answer);
@@ -86,18 +100,31 @@
   * Increases the score by one for every correct answer
   */
  function incrementScore() {
+     console.log("incrementScore is running")
      let oldScore = parseInt(document.getElementsByClassName("score")[0].innerText);
      document.getElementsByClassName("score")[0].innerText = ++oldScore;
  }
 
+ /**
+  * Displays the player's final score and presents them with the option to play again or share their results
+  */
  function displayResult() {
+     console.log("displayResult is running")
      document.getElementsByClassName("question-area")[0].innerHTML = "Game over!";
      document.getElementsByClassName("btn-a")[0].innerHTML = "Play Again";
      document.getElementsByClassName("btn-b")[0].style.display = "none";
      document.getElementsByClassName("btn-c")[0].innerHTML = "Share Results";
-     console.log("Game Over");
+ }
+ /**
+  * Refreshes the question area and the scoreboard to start a new game
+  */
+ function newGame() {
+     console.log("newGame is running");
+     repeatedQuestion.length = 0;
+     document.getElementsByClassName("score")[0].innerText = "0";
+     renderNextQuestion();
  }
 
  function shareResult() {
-
+     console.log("shareResult is running");
  }
