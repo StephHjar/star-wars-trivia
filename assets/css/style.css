@@ -22,7 +22,8 @@ html {
     display: none;
 }
 
-/* gameplay area + score area */
+/* style rules for all divs */
+.scroll-div,
 .game-area,
 .score-area,
 footer {
@@ -39,6 +40,77 @@ footer {
     width: 75%;
 }
 
+/* scrolling text on splash page */
+.scroll-div {
+    background-color: rgba(0, 0, 0, 0.75);
+    box-shadow: #000 10px 10px;
+    color: #FFFF00;
+    margin-top: 5%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* scroll animation from hubspot - credit in readme */
+.scroll-text {
+
+    margin-top: 5%;
+    height: 100%;
+
+
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+
+    -moz-animation: my-animation 10s linear infinite;
+    -webkit-animation: my-animation 10s linear infinite;
+    animation: my-animation 10s linear infinite;
+
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+
+    -moz-animation: my-animation 10s linear infinite;
+    -webkit-animation: my-animation 10s linear infinite;
+    animation: my-animation 10s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+    from {
+        -moz-transform: translateY(100%);
+    }
+
+    to {
+        -moz-transform: translateY(-100%);
+    }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+    from {
+        -webkit-transform: translateY(100%);
+    }
+
+    to {
+        -webkit-transform: translateY(-100%);
+    }
+}
+
+@keyframes my-animation {
+    from {
+        -moz-transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+
+    to {
+        -moz-transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}
+
+/* answer buttons  */
 .answer-area {
     padding: 1rem 0 0;
     text-align: center;
