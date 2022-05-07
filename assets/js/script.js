@@ -75,8 +75,8 @@
      for (let button of buttons) {
          button.addEventListener("mousedown", checkAnswer);
          button.addEventListener("mouseup", renderNextQuestion);
-         button.addEventListener("touchstart", checkAnswer);
-         button.addEventListener("touchend", renderNextQuestion);
+         /*button.addEventListener("touchstart", checkAnswer);
+         button.addEventListener("touchend", renderNextQuestion);*/
      }
  }
 
@@ -126,6 +126,10 @@
   */
  function newGame() {
      console.log("newGame is running");
+     for (let button of buttons) {
+         button.removeEventListener("click", newGame);
+         button.removeEventListener("click", shareResult);
+     }
      repeatedQuestion.length = 0;
      document.getElementsByClassName("score")[0].innerText = "0";
      renderNextQuestion();
