@@ -26,9 +26,9 @@
   */
  function renderNextQuestion() {
 
-     if (CURRENT_QUESTION_COUNT >= MAX_QUESTION) {
-         return false;
-     }
+     /*if (CURRENT_QUESTION_COUNT >= MAX_QUESTION) {
+         displayResult;
+     }*/
      for (let button of buttons) {
          button.style = null;
      }
@@ -91,6 +91,10 @@
  }
 
  function displayResult() {
+     document.getElementsByClassName("question-area")[0].innerHTML = "Game over!";
+     document.getElementsByClassName("btn-a")[0].innerHTML = "Play Again";
+     document.getElementsByClassName("btn-b")[0].style.display = "none";
+     document.getElementsByClassName("btn-c")[0].innerHTML = "Share Results";
      console.log("Game Over");
  }
 
