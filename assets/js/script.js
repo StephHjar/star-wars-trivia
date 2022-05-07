@@ -7,7 +7,9 @@
  let CURRENT_QUESTION_COUNT = 0;
  let MAX_QUESTION = 10;
 
- document.addEventListener("click", startGame);
+ document.addEventListener("click", startGame, {
+     once: true
+ });
 
  let repeatedQuestion = []
 
@@ -43,11 +45,14 @@
   */
  function getRandomQuestion() {
      currentQuestion = questions[questions.length * Math.random() | 0];
-     if (repeatedQuestion.indexOf(currentQuestion) >= 0) {
-         return getRandomQuestion()
+     if (repeatedQuestion.length >= 10) {
+         displayResult();
+     } else if (repeatedQuestion.indexOf(currentQuestion) >= 0) {
+         return getRandomQuestion();
+     } else {
+         repeatedQuestion.push(currentQuestion);
+         return currentQuestion;
      }
-     repeatedQuestion.push(currentQuestion)
-     return currentQuestion;
  }
 
  /**
@@ -67,6 +72,8 @@
  function checkAnswer() {
      let answer = currentQuestion.answer;
      let response = this.innerText;
+     console.log(answer);
+     console.log(response);
      if (answer === response) {
          this.style.backgroundColor = "green";
          incrementScore();
@@ -84,7 +91,7 @@
  }
 
  function displayResult() {
-
+     console.log("Game Over");
  }
 
  function shareResult() {
