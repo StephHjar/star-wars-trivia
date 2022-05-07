@@ -23,8 +23,13 @@
   * Populates a random question in the question area and answers in the buttons
   */
  function renderNextQuestion() {
+
      if (CURRENT_QUESTION_COUNT >= MAX_QUESTION) {
          return false;
+     }
+     for (let button of buttons) {
+
+         button.style = null;
      }
      currentQuestion = getRandomQuestion();
      document.getElementsByClassName("question-area")[0].innerHTML = currentQuestion.question;
@@ -52,7 +57,8 @@
 
  function handleClickEvent() {
      for (let button of buttons) {
-         button.addEventListener("click", checkAnswer);
+         button.addEventListener("mousedown", checkAnswer);
+         button.addEventListener("mouseup", renderNextQuestion);
      }
  }
 
@@ -62,15 +68,11 @@
  function checkAnswer() {
      let answer = currentQuestion.answer;
      let response = this.innerText;
-     console.log(answer);
-     console.log(response);
      if (answer === response) {
-         incrementScore();
          this.style.backgroundColor = "green";
-         renderNextQuestion();
+         incrementScore();
      } else {
          this.style.backgroundColor = "red";
-         renderNextQuestion();
      }
  }
 
