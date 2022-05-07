@@ -11,6 +11,15 @@
      once: true
  });
 
+ /**
+  * Code modified from CodePen - credit in README
+  */
+ if ("ontouchstart" in document.documentElement) {
+     for (let button of buttons) {
+         button.style.boxShadow = 'none';
+     }
+ }
+
  let repeatedQuestion = [];
 
  /**
@@ -28,7 +37,6 @@
  function renderNextQuestion() {
      for (let button of buttons) {
          button.style = null;
-         button.style.boxShadow = 'none';
      }
      if (repeatedQuestion.length >= 10) {
          displayResult();
