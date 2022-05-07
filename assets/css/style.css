@@ -3,8 +3,7 @@ html {
     background-color: #000;
     background: url("../images/background.webp") no-repeat center center fixed;
     background-size: cover;
-    height: 100%;
-    overflow: hidden;
+    height: 100vh;
 }
 
 /* header logo */
@@ -55,7 +54,6 @@ footer {
 
     margin-top: 5%;
     height: 100%;
-
 
     -moz-transform: translateY(100%);
     -webkit-transform: translateY(100%);
