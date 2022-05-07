@@ -63,18 +63,8 @@
  function handleClickEvent() {
      console.log("handleClickEvent is running")
      for (let button of buttons) {
-         if (button.HTMLContent === "Play Again") {
-             console.log("playing again");
-             document.getElementsByClassName("btn-a")[0].addEventListener("mouseup",
-                 newGame);
-         } else if (button.HTMLContent === "Share Results") {
-             console.log("sharing results");
-             button.addEventListener("mouseup",
-                 shareResult);
-         } else {
-             button.addEventListener("mousedown", checkAnswer);
-             button.addEventListener("mouseup", renderNextQuestion);
-         }
+         button.addEventListener("mousedown", checkAnswer);
+         button.addEventListener("mouseup", renderNextQuestion);
      }
  }
 
@@ -106,7 +96,7 @@
  }
 
  /**
-  * Displays the player's final score and presents them with the option to play again or share their results
+  * Displays the player's final score and presents the player with the option to play again or share their results
   */
  function displayResult() {
      console.log("displayResult is running")
@@ -114,6 +104,12 @@
      document.getElementsByClassName("btn-a")[0].innerHTML = "Play Again";
      document.getElementsByClassName("btn-b")[0].style.display = "none";
      document.getElementsByClassName("btn-c")[0].innerHTML = "Share Results";
+     for (let button of buttons) {
+         button.removeEventListener("mousedown", checkAnswer);
+         button.removeEventListener("mouseup", renderNextQuestion);
+     }
+     document.getElementsByClassName("btn-a")[0].addEventListener("click", newGame);
+     document.getElementsByClassName("btn-c")[0].addEventListener("click", shareResult);
  }
  /**
   * Refreshes the question area and the scoreboard to start a new game
