@@ -28,6 +28,7 @@
  function renderNextQuestion() {
      for (let button of buttons) {
          button.style = null;
+         button.filter.drop - shadow(null);
      }
      if (repeatedQuestion.length >= 10) {
          displayResult();
