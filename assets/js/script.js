@@ -16,7 +16,7 @@
   */
  if ("ontouchstart" in document.documentElement) {
      for (let button of buttons) {
-         button.style.boxShadow = 'none';
+         button.style = null;
      }
  }
 
