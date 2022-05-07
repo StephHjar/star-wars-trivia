@@ -19,12 +19,12 @@
      renderNextQuestion();
  }
 
+ /**
+  * Populates a random question in the question area and answers in the buttons
+  */
  function renderNextQuestion() {
      if (CURRENT_QUESTION_COUNT >= MAX_QUESTION) {
          return false;
-     }
-     for (let button of buttons) {
-         button.style.backgroundColor = "yellow";
      }
      currentQuestion = getRandomQuestion();
      document.getElementsByClassName("question-area")[0].innerHTML = currentQuestion.question;
@@ -34,6 +34,9 @@
      handleClickEvent();
  }
 
+ /**
+  * Pulls a random question from the questions array
+  */
  function getRandomQuestion() {
      currentQuestion = questions[questions.length * Math.random() | 0];
      if (repeatedQuestion.indexOf(currentQuestion) >= 0) {
@@ -43,12 +46,19 @@
      return currentQuestion;
  }
 
+ /**
+  * Runs checkAnswer function when a button is clicked
+  */
+
  function handleClickEvent() {
      for (let button of buttons) {
          button.addEventListener("click", checkAnswer);
      }
  }
 
+ /**
+  * Checks whether the user's answer is correct
+  */
  function checkAnswer() {
      let answer = currentQuestion.answer;
      let response = this.innerText;
