@@ -15,8 +15,8 @@
      once: true
  });
 
- document.getElementsByClassName("how-to-play")[0].addEventListener("click", howToPlay);
- document.getElementsByClassName("close-window")[0].addEventListener("click", closeHowToPlay);
+ document.getElementsByClassName("how-to-play")[0].addEventListener("click", showInstructions);
+ document.getElementsByClassName("close-window")[0].addEventListener("click", closeInstructions);
 
  let repeatedQuestion = [];
 
@@ -24,6 +24,7 @@
   * Initiates gameplay when the player clicks anywhere on the page
   */
  function startGame() {
+     console.log("startGame is running")
      document.getElementsByClassName("scroll-div")[0].style.display = "none";
      document.getElementsByClassName("content")[0].style.display = "block";
      renderNextQuestion();
@@ -32,15 +33,21 @@
  /**
   * Shows the 'how to play' instructions in a popup window
   */
-
  function showInstructions() {
+     console.log("showInstructions is running");
+     document.getElementsByClassName("instructions")[0].style.display = "block";
+ }
 
+ function closeInstructions() {
+     console.log("closeInstructions is running")
+     document.getElementsByClassName("instructions")[0].style.display = "none";
  }
 
  /**
   * Populates a random question in the question area and answers in the buttons
   */
  function renderNextQuestion() {
+     console.log("renderNExtQuestion is running")
      for (let button of buttons) {
          button.style = null;
      }
@@ -180,16 +187,4 @@
      function copyToClipboard(text) {
          window.prompt("Copy the below text to your clipboard, and share with your friends!", text)
      }
- }
-
- /**
-  * Pops out the instructions for how to play the game when "how to play" is clicked
-  */
-
- function howToPlay() {
-     document.getElementsByClassName("instructions")[0].style.display = "block";
- }
-
- function closeHowToPlay() {
-     document.getElementsByClassName("instructions")[0].style.display = "none";
  }
