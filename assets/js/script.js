@@ -15,6 +15,9 @@
      once: true
  });
 
+ document.getElementsByClassName("how-to-play")[0].addEventListener("click", howToPlay);
+ document.getElementsByClassName("close-window")[0].addEventListener("click", closeHowToPlay);
+
  let repeatedQuestion = [];
 
  /**
@@ -24,6 +27,14 @@
      document.getElementsByClassName("scroll-div")[0].style.display = "none";
      document.getElementsByClassName("content")[0].style.display = "block";
      renderNextQuestion();
+ }
+
+ /**
+  * Shows the 'how to play' instructions in a popup window
+  */
+
+ function showInstructions() {
+
  }
 
  /**
@@ -169,4 +180,16 @@
      function copyToClipboard(text) {
          window.prompt("Copy the below text to your clipboard, and share with your friends!", text)
      }
+ }
+
+ /**
+  * Pops out the instructions for how to play the game when "how to play" is clicked
+  */
+
+ function howToPlay() {
+     document.getElementsByClassName("instructions")[0].style.display = "block";
+ }
+
+ function closeHowToPlay() {
+     document.getElementsByClassName("instructions")[0].style.display = "none";
  }
