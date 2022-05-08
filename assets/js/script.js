@@ -86,6 +86,10 @@
      if (answer === response) {
          this.style.backgroundColor = "green";
          incrementScore();
+     } else if (response === "Play Again") {
+         this.style.backgroundColor = "lightyellow";
+     } else if (response === "Share Results") {
+         this.style.backgroundColor = "lightyellow";
      } else {
          this.style.backgroundColor = "red";
      }
