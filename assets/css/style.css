@@ -22,6 +22,7 @@ html {
 
 /* style rules for all divs */
 .scroll-div,
+.instructions,
 .game-area,
 .score-area,
 .footer-content {
@@ -109,6 +110,19 @@ html {
         -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
     }
+}
+
+/* how to play section */
+.instructions {
+    box-shadow: #000 10px 10px;
+    color: #FFFF00;
+    font-size: 1.5rem;
+    padding: 0.25rem;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 /* buttons  */
