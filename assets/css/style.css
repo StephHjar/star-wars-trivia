@@ -117,6 +117,7 @@ html {
     box-shadow: #000 10px 10px;
     color: #FFFF00;
     font-size: 1.5rem;
+    margin: 2.5% auto auto;
     padding: 0.25rem;
     text-shadow:
         -1px -1px 0 #000,
@@ -182,6 +183,8 @@ html {
         1px 1px 0 #000;
 }
 
+/* media queries */
+
 @media only screen and (max-width: 1200px) {
     .btn:hover {
         box-shadow: none;
@@ -190,5 +193,16 @@ html {
     .scroll-div {
         margin-top: 20%;
         height: 20rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .scroll-div,
+    .instructions,
+    .game-area,
+    .score-area,
+    .footer-content {
+        margin: 2.5% auto;
     }
 }
