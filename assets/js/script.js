@@ -158,14 +158,15 @@
  function shareResults() {
      console.log("shareResult is running");
      let score = parseInt(document.getElementsByClassName("score")[0].innerText);
-     let textArea = document.createElement("button");
+     let textArea = document.createElement("textarea");
      textArea.style.display = "none";
      document.body.appendChild(textArea);
      textArea.focus();
+     textArea.select();
      textArea.innerHTML = `I got ${score} out of 20 questions right at Star Wars Legends trivia! Play here: https://stephhjar.github.io/star-wars-trivia/`;
      copyToClipboard(textArea.innerHTML);
 
      function copyToClipboard(text) {
-         window.prompt("Copy to clipboard: Ctrl+C, and Share with your friends: Ctrl+V", text)
+         window.prompt("Copy the below text to your clipboard, and share with your friends!", text)
      }
  }
