@@ -186,4 +186,9 @@ html {
     .btn:hover {
         box-shadow: none;
     }
+
+    .scroll-div {
+        margin-top: 20%;
+        height: 20rem;
+    }
 }
