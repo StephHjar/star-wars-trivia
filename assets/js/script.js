@@ -1,4 +1,3 @@
- import introJs from "intro.js";
  import {
      questions
  } from "./questions.js";
@@ -17,8 +16,6 @@
  });
 
  let repeatedQuestion = [];
-
- introJs().start();
 
  /**
   * Initiates gameplay when the player clicks anywhere on the page
