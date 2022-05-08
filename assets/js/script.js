@@ -62,30 +62,26 @@
      }
  }
 
-
  /** 
-  * Checks whether a device is touch screen enabled. Code from GeeksforGeeks, credit in README 
+  * Checks whether a device is a touch screen device. Code from Codeburst.io, credit in README 
   */
- function is_touch_enabled() {
-     return ('ontouchstart' in window) ||
-         (navigator.maxTouchPoints > 0) ||
-         (navigator.msMaxTouchPoints > 0);
- }
+ window.addEventListener('touchstart', function onFirstTouch() {
+     window.IS_TOUCH_ENABLED = true;
+ }, false)
 
  /**
   * Handles button clicks and runs the checkAnswer function
   */
-
  function handleClickEvent() {
      console.log("handleClickEvent is running")
      for (let button of buttons) {
-         if (is_touch_enabled) {
+         if (window.IS_TOUCH_ENABLED) {
              console.log("I am touch enabled");
              button.addEventListener("touchstart", checkAnswer);
              button.addEventListener("touchend", renderNextQuestion);
          } else {
              button.addEventListener("mousedown", checkAnswer);
-             button.addEventListener("mouseup", checkAnswer);
+             button.addEventListener("mouseup", renderNextQuestion);
          }
      }
  }
