@@ -111,7 +111,7 @@ html {
     }
 }
 
-/* answer buttons  */
+/* buttons  */
 .answer-area {
     padding: 1rem 0 0;
     text-align: center;
@@ -135,6 +135,11 @@ html {
 
 .btn:active {
     box-shadow: none;
+}
+
+.play-again,
+.share-results {
+    display: none;
 }
 
 /* footer */

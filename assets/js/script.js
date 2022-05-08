@@ -16,7 +16,7 @@
   */
  if ("ontouchstart" in document.documentElement) {
      for (let button of buttons) {
-         button.style.boxShadow = "none";
+         button.style = null;
      }
  }
 
@@ -109,17 +109,17 @@
   * Displays the player's final score and presents the player with the option to play again or share their results
   */
  function displayResult() {
-     console.log("displayResult is running")
+     console.log("displayResult is running");
      document.getElementsByClassName("question-area")[0].innerHTML = "Game over!";
-     document.getElementsByClassName("btn-a")[0].innerHTML = "Play Again";
+     document.getElementsByClassName("btn-a")[0].style.display = "none";
      document.getElementsByClassName("btn-b")[0].style.display = "none";
+     document.getElementsByClassName("btn-c")[0].style.display = "none";
+     document.getElementsByClassName("play-again")[0].style.display = "inline-block";
+     document.getElementsByClassName("share-results")[0].style.display = "inline-block";
+
      document.getElementsByClassName("btn-c")[0].innerHTML = "Share Results";
-     for (let button of buttons) {
-         button.removeEventListener("mousedown", checkAnswer);
-         button.removeEventListener("mouseup", renderNextQuestion);
-     }
-     document.getElementsByClassName("btn-a")[0].addEventListener("click", newGame);
-     document.getElementsByClassName("btn-c")[0].addEventListener("click", shareResult);
+     document.getElementsByClassName("play-again")[0].addEventListener("click", newGame);
+     document.getElementsByClassName("share-results")[0].addEventListener("click", shareResult);
  }
  /**
   * Refreshes the question area and the scoreboard to start a new game
