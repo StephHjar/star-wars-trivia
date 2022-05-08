@@ -67,7 +67,8 @@ If this section grows too long, you may want to split it off into a separate fil
 
 - The check answer function was not working correctly because the answers in each button were set to 'text-transform: uppercase', which meant they did not match the text in the array. Removed the text-transform and the function started working correctly.
 - The background colour of each button was set to change to red or green if the answer was incorrect (red) or correct (green), but then background colour would stay red or green throughout the next questions. Added an 'onmouseup' event to the 'renderNextQuestion' function that reset the styling to null (CSS default). This resolved the error. Used [this page](https://stackoverflow.com/questions/10698942/how-to-return-a-javascript-set-style-property-to-css-default) on StackOverflow to help troubleshoot.
-- The drop shadow that appears on each button on hover was not working if that button was clicked to answer the previous question. Changed CSS style rule that removes the drop shadow from ":focus" to ":active" and this resolved the error, as the button is no longer active after it has been clicked, but it is still in focus. 
+- The drop shadow that appears on each button on hover was not working if that button was clicked to answer the previous question. Changed CSS style rule that removes the drop shadow from ":focus" to ":active" and this resolved the error, as the button is no longer active after it has been clicked, but it is still in focus. Removed the drop shadow from smaller screen size devices / touch screen devices as the active property stays active after a tap is over.
+- The checkAnswer and renderNextQuestion functions were running twice on touch screen devices, due to the screen sometimes reading both 'touchstart' and 'mousedown', and 'touchend' and 'mouseup' events on buttons. Added scripting to detect whether a user is on a touchscreen device, and only running one event listener as relevant. 
 
 ### Unfixed Bugs
 
@@ -100,6 +101,7 @@ You can break the credits section up into Content and Media, depending on what y
 - [This page](https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array) on StackOverflow was used to understand how to select a random object from an array.
 - Code Insitutute's [Love Running Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/8775beaed6ed403d92318845af971b30/?child=first) was used for help in connecting event listeners to buttons.
 - [This code on Hubspot](https://blog.hubspot.com/website/scrolling-text-css) was used to add the scrolling text to the splash page.
+- [This code on GeeksforGeeks](https://www.geeksforgeeks.org/how-to-detect-touch-screen-device-using-javascript/?ref=lbp) was used to detect whether a user is on a touch screen device. 
 
 ### Media
 

@@ -62,16 +62,30 @@
      }
  }
 
- /**
-  * Runs checkAnswer function when a button is clicked and populates the next question
+
+ /** 
+  * Checks whether a device is touch screen enabled. Code from GeeksforGeeks, credit in README 
   */
+ function is_touch_enabled() {
+     return ('ontouchstart' in window) ||
+         (navigator.maxTouchPoints > 0) ||
+         (navigator.msMaxTouchPoints > 0);
+ }
+
+ /**
+  * Handles button clicks and runs the checkAnswer function
+  */
+
  function handleClickEvent() {
      console.log("handleClickEvent is running")
      for (let button of buttons) {
-         button.addEventListener("mousedown", checkAnswer);
-         button.addEventListener("mouseup", renderNextQuestion);
-         button.addEventListener("touchstart", checkAnswer);
-         button.addEventListener("touchend", renderNextQuestion);
+         if (is_touch_enabled) {
+             button.addEventListener("touchstart", checkAnswer);
+             button.addEventListener("touchend", renderNextQuestion);
+         } else {
+             button.addEventListener("mousedown", checkAnswer);
+             button.addEventListener("mouseup", checkAnswer);
+         }
      }
  }
 
@@ -79,6 +93,7 @@
   * Checks whether the user's answer is correct
   */
  function checkAnswer() {
+     console.log("checkAnswer is running")
      let answer = currentQuestion.answer;
      let response = this.innerText;
      console.log(answer);
