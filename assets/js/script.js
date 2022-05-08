@@ -4,6 +4,10 @@
 
  let currentQuestion = null;
  let buttons = document.getElementsByTagName("button");
+ let questionArea = document.getElementsByClassName("question-area")[0];
+ let buttonA = document.getElementsByClassName("btn-a")[0];
+ let buttonB = document.getElementsByClassName("btn-b")[0];
+ let buttonC = document.getElementsByClassName("btn-c")[0];
  let CURRENT_QUESTION_COUNT = 0;
  let MAX_QUESTION = 10;
 
@@ -42,10 +46,10 @@
          displayResult();
      } else {
          currentQuestion = getRandomQuestion();
-         document.getElementsByClassName("question-area")[0].innerHTML = currentQuestion.question;
-         document.getElementsByClassName("btn-a")[0].innerHTML = currentQuestion.options[0];
-         document.getElementsByClassName("btn-b")[0].innerHTML = currentQuestion.options[1];
-         document.getElementsByClassName("btn-c")[0].innerHTML = currentQuestion.options[2];
+         questionArea.innerHTML = currentQuestion.question;
+         buttonA.innerHTML = currentQuestion.options[0];
+         buttonB.innerHTML = currentQuestion.options[1];
+         buttonC.innerHTML = currentQuestion.options[2];
          handleClickEvent();
      }
  }
@@ -75,8 +79,6 @@
      for (let button of buttons) {
          button.addEventListener("mousedown", checkAnswer);
          button.addEventListener("mouseup", renderNextQuestion);
-         button.addEventListener("touchstart", checkAnswer);
-         button.addEventListener("touchend", renderNextQuestion);
      }
  }
 
@@ -105,22 +107,22 @@
      document.getElementsByClassName("score")[0].innerText = ++oldScore;
  }
 
+
  /**
   * Displays the player's final score and presents the player with the option to play again or share their results
   */
  function displayResult() {
      console.log("displayResult is running");
-     document.getElementsByClassName("question-area")[0].innerHTML = "Game over!";
-     document.getElementsByClassName("btn-a")[0].style.display = "none";
-     document.getElementsByClassName("btn-b")[0].style.display = "none";
-     document.getElementsByClassName("btn-c")[0].style.display = "none";
+     questionArea.innerHTML = "Game over!";
+     buttonA.style.display = "none";
+     buttonB.style.display = "none";
+     buttonC.style.display = "none";
      document.getElementsByClassName("play-again")[0].style.display = "inline-block";
      document.getElementsByClassName("share-results")[0].style.display = "inline-block";
-
-     document.getElementsByClassName("btn-c")[0].innerHTML = "Share Results";
      document.getElementsByClassName("play-again")[0].addEventListener("click", newGame);
      document.getElementsByClassName("share-results")[0].addEventListener("click", shareResult);
  }
+
  /**
   * Refreshes the question area and the scoreboard to start a new game
   */
