@@ -16,7 +16,7 @@
   */
  if ("ontouchstart" in document.documentElement) {
      for (let button of buttons) {
-         button.style = null;
+         button.style.boxShadow = "none";
      }
  }
 
@@ -75,8 +75,8 @@
      for (let button of buttons) {
          button.addEventListener("mousedown", checkAnswer);
          button.addEventListener("mouseup", renderNextQuestion);
-         /*button.addEventListener("touchstart", checkAnswer);
-         button.addEventListener("touchend", renderNextQuestion);*/
+         button.addEventListener("touchstart", checkAnswer);
+         button.addEventListener("touchend", renderNextQuestion);
      }
  }
 
