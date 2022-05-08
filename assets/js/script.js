@@ -152,20 +152,20 @@
      document.getElementsByClassName("score")[0].innerText = "0";
      renderNextQuestion();
  }
-
- /*function shareResults() {
+ /**
+  * Allows the user to share their results by copying and pasting their score to and from the clipboard. Code adapted from StackOverflow, credit in README
+  */
+ function shareResults() {
      console.log("shareResult is running");
      let score = parseInt(document.getElementsByClassName("score")[0].innerText);
-     let textArea = document.createElement("textarea");
-     textArea.value = text;
+     let textArea = document.createElement("button");
      textArea.style.display = "none";
      document.body.appendChild(textArea);
      textArea.focus();
-     textArea.select();
      textArea.innerHTML = `I got ${score} out of 20 questions right at Star Wars Legends trivia! Play here: https://stephhjar.github.io/star-wars-trivia/`;
      copyToClipboard(textArea.innerHTML);
 
      function copyToClipboard(text) {
          window.prompt("Copy to clipboard: Ctrl+C, and Share with your friends: Ctrl+V", text)
      }
- }*/
+ }

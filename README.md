@@ -105,6 +105,7 @@ You can break the credits section up into Content and Media, depending on what y
 - Part of [this code on GeeksforGeeks](https://www.geeksforgeeks.org/how-to-detect-touch-screen-device-using-javascript/?ref=lbp) was used to detect whether a user is on a touch screen device. 
 - Part of [this code on codeburst.io](https://codeburst.io/the-only-way-to-detect-touch-with-javascript-7791a3346685) was used to detect whether a touch event has actually happened, and adjust button behaviour accordingly. 
 - Code from [CSS-Tricks](https://css-tricks.com/adding-stroke-to-web-text/) was used to add an outline to yellow text.
+- I used [this thread](https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript) on Stack Overflow (and specifically adapted [this response](https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript) and [this response](https://stackoverflow.com/a/30810322)) to write the shareResults function, allowing the user to copy and paste their results to and from their clipboard.
 
 ### Media
 
