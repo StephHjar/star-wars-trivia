@@ -80,6 +80,7 @@
      console.log("handleClickEvent is running")
      for (let button of buttons) {
          if (is_touch_enabled) {
+             console.log("I am touch enabled");
              button.addEventListener("touchstart", checkAnswer);
              button.addEventListener("touchend", renderNextQuestion);
          } else {
@@ -143,7 +144,7 @@
      document.getElementsByClassName("play-again")[0].style.display = "inline-block";
      document.getElementsByClassName("share-results")[0].style.display = "inline-block";
      document.getElementsByClassName("play-again")[0].addEventListener("click", newGame);
-     document.getElementsByClassName("share-results")[0].addEventListener("click", shareResult);
+     document.getElementsByClassName("share-results")[0].addEventListener("click", shareResults);
  }
 
  /**
@@ -156,6 +157,19 @@
      renderNextQuestion();
  }
 
- function shareResult() {
+ /*function shareResults() {
      console.log("shareResult is running");
- }
+     let score = parseInt(document.getElementsByClassName("score")[0].innerText);
+     let textArea = document.createElement("textarea");
+     textArea.value = text;
+     textArea.style.display = "none";
+     document.body.appendChild(textArea);
+     textArea.focus();
+     textArea.select();
+     textArea.innerHTML = `I got ${score} out of 20 questions right at Star Wars Legends trivia! Play here: https://stephhjar.github.io/star-wars-trivia/`;
+     copyToClipboard(textArea.innerHTML);
+
+     function copyToClipboard(text) {
+         window.prompt("Copy to clipboard: Ctrl+C, and Share with your friends: Ctrl+V", text)
+     }
+ }*/
