@@ -113,7 +113,18 @@
   */
  function displayResult() {
      console.log("displayResult is running");
-     questionArea.innerHTML = "Game over!";
+     let score = parseInt(document.getElementsByClassName("score")[0].innerText);
+     if (score >= 10) {
+         questionArea.innerHTML = `You got ${score} out of 10 questions correct! Congratulations! You're a Jedi Grand Master!`
+     } else if (score >= 7 && score < 10) {
+         questionArea.innerHTML = `Great job! You got ${score} out of 10 questions correct! You've clearly done your training, Jedi Master!`
+     } else if (score >= 5 && score < 7) {
+         `You got ${score} out of 10 questions right. Not bad, Jedi!`
+     } else if (score >= 3 && score < 5) {
+         `You scored ${score} out of 10. You may still be a Padawan, but you're on your way to becoming a Jedi!`
+     } else {
+         `${score} out of 10. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`
+     }
      buttonA.style.display = "none";
      buttonB.style.display = "none";
      buttonC.style.display = "none";
@@ -128,10 +139,6 @@
   */
  function newGame() {
      console.log("newGame is running");
-     for (let button of buttons) {
-         button.removeEventListener("click", newGame);
-         button.removeEventListener("click", shareResult);
-     }
      repeatedQuestion.length = 0;
      document.getElementsByClassName("score")[0].innerText = "0";
      renderNextQuestion();

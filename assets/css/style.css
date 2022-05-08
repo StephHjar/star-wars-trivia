@@ -162,3 +162,9 @@ html {
     color: #FFFF00;
     font-size: 1.5rem;
 }
+
+@media only screen and (max-width: 1200px) {
+    .btn-hover {
+        box-shadow: none;
+    }
+}
