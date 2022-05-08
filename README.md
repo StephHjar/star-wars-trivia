@@ -70,6 +70,7 @@ If this section grows too long, you may want to split it off into a separate fil
 - The drop shadow that appears on each button on hover was not working if that button was clicked to answer the previous question. Changed CSS style rule that removes the drop shadow from ":focus" to ":active" and this resolved the error, as the button is no longer active after it has been clicked, but it is still in focus. Removed the drop shadow from smaller screen size devices / touch screen devices as the active property stays active after a tap is over.
 - The checkAnswer and renderNextQuestion functions were running twice on touch screen devices, due to the screen sometimes reading both 'touchstart' and 'mousedown', and 'touchend' and 'mouseup' events on buttons. Added scripting to detect whether a user is on a touchscreen device, and only running one event listener as relevant.
 - The function to tell whether a user was on a touch screen device was also reading my Macbook Air as a touch screen device, which meant the buttons were not working on my laptop (were waiting for touchstart and touchend events, instead of mousedown and mouseup events). I found code on [Codeburst.io](https://codeburst.io/the-only-way-to-detect-touch-with-javascript-7791a3346685) that reads whether a touch event has actually happened, instead of whether a device is touch screen enabled, and this resolved the error. 
+- Every time the instructions window was opened by clicking "How to Play", the page reloaded entirely. I used StackOverflow to troubleshoot, and discovered via [this page](https://stackoverflow.com/questions/4823973/javascript-page-reloads-with-eventlistener-click) that this was because the "How to Play" link was empty (a href="") instead of (a href="#").
 
 ### Unfixed Bugs
 
@@ -106,6 +107,7 @@ You can break the credits section up into Content and Media, depending on what y
 - Part of [this code on codeburst.io](https://codeburst.io/the-only-way-to-detect-touch-with-javascript-7791a3346685) was used to detect whether a touch event has actually happened, and adjust button behaviour accordingly. 
 - Code from [CSS-Tricks](https://css-tricks.com/adding-stroke-to-web-text/) was used to add an outline to yellow text.
 - I used [this thread](https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript) on Stack Overflow (and specifically adapted [this response](https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript) and [this response](https://stackoverflow.com/a/30810322)) to write the shareResults function, allowing the user to copy and paste their results to and from their clipboard.
+- [This page on StackOverflow](https://stackoverflow.com/questions/4823973/javascript-page-reloads-with-eventlistener-click) was used to troubleshoot when an empty 'a' element was causing the page to reload every time an event listener was called.
 
 ### Media
 
