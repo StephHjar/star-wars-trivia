@@ -70,6 +70,8 @@
      for (let button of buttons) {
          button.addEventListener("mousedown", checkAnswer);
          button.addEventListener("mouseup", renderNextQuestion);
+         button.addEventListener("touchstart", checkAnswer);
+         button.addEventListener("touchend", renderNextQuestion);
      }
  }
 
