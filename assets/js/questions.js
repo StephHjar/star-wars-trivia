@@ -38,49 +38,44 @@ export let questions = [{
     "question": "Who does Jaina Solo marry?",
     "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
     "answer": "Jagged Fel"
+}, {
+    "question": "In the Star Wars universe, GFFA stands for the Galactic Federation of _____ Alliances.",
+    "options": ["Force", "Free", "Former"],
+    "answer": "Free"
+}, {
+    "question": "How do Leia's noghri bodyguards address her?",
+    "options": ["Lady Organa", "Lady Solo", "Lady Vader"],
+    "answer": "Lady Vader"
+}, {
+    "question": "What is Leia's role in the New Republic?",
+    "options": ["Chief of State", "Jedi Knight", "General"],
+    "answer": "Chief of State"
+}, {
+    "question": "What superweapon did Kyp Durron steal?",
+    "options": ["Planet Killer", "Sun Crusher", "Death Star III"],
+    "answer": "Sun Crusher"
+}, {
+    "question": "Cloud City has never been used as a ________.",
+    "options": ["gas mine", "zoo", "casino"],
+    "answer": "zoo"
+}, {
+    "question": "Jaina Solo has the title _______ of the Jedi bestowed up on her.",
+    "options": ["queen", "leader", "sword"],
+    "answer": "sword"
+}, {
+    "question": "Who is Allana Solo's father?",
+    "options": ["Jacen Solo", "Han Solo", "Anakin Solo"],
+    "answer": "Jacen Solo"
+}, {
+    "question": "Where is Wedge Antilles from?",
+    "options": ["Corellia", "Coruscant", "Tatooine"],
+    "answer": "Corellia"
+}, {
+    "question": "What was Tycho Celchu's main role in the Rebel Alliance?",
+    "options": ["soldier", "pilot", "cook"],
+    "answer": "pilot"
+}, {
+    "question": "What is Ord Mantell known for?",
+    "options": ["smugglers", "gemstones", "rain"],
+    "answer": "smugglers"
 }];
-
-
-
-
-{
-    "question": "Who does Jaina Solo marry?",
-    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
-    "answer": "Jagged Fel"
-}{
-    "question": "Who does Jaina Solo marry?",
-    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
-    "answer": "Jagged Fel"
-}{
-    "question": "Who does Jaina Solo marry?",
-    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
-    "answer": "Jagged Fel"
-}{
-    "question": "Who does Jaina Solo marry?",
-    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
-    "answer": "Jagged Fel"
-}{
-    "question": "Who does Jaina Solo marry?",
-    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
-    "answer": "Jagged Fel"
-}{
-    "question": "Who does Jaina Solo marry?",
-    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
-    "answer": "Jagged Fel"
-}{
-    "question": "Who does Jaina Solo marry?",
-    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
-    "answer": "Jagged Fel"
-}{
-    "question": "Who does Jaina Solo marry?",
-    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
-    "answer": "Jagged Fel"
-}{
-    "question": "Who does Jaina Solo marry?",
-    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
-    "answer": "Jagged Fel"
-}{
-    "question": "Who does Jaina Solo marry?",
-    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
-    "answer": "Jagged Fel"
-}

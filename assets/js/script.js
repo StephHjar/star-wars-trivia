@@ -8,8 +8,6 @@
  let buttonA = document.getElementsByClassName("btn-a")[0];
  let buttonB = document.getElementsByClassName("btn-b")[0];
  let buttonC = document.getElementsByClassName("btn-c")[0];
- let CURRENT_QUESTION_COUNT = 0;
- let MAX_QUESTION = 10;
 
  document.addEventListener("click", startGame, {
      once: true
@@ -51,7 +49,7 @@
      for (let button of buttons) {
          button.style = null;
      }
-     if (repeatedQuestion.length >= 10) {
+     if (repeatedQuestion.length >= 20) {
          displayResult();
      } else {
          currentQuestion = getRandomQuestion();
@@ -69,7 +67,7 @@
  function getRandomQuestion() {
      console.log("getRandomQuestion is running")
      currentQuestion = questions[Math.floor(Math.random() * questions.length)];
-     if (repeatedQuestion.length >= 10) {
+     if (repeatedQuestion.length >= 20) {
          return false;
      } else
      if (repeatedQuestion.indexOf(currentQuestion) >= 0) {
@@ -141,16 +139,16 @@
  function displayResult() {
      console.log("displayResult is running");
      let score = parseInt(document.getElementsByClassName("score")[0].innerText);
-     if (score >= 10) {
-         questionArea.innerHTML = `You got ${score} out of 10 questions correct! Congratulations! You're a Jedi Grand Master!`
-     } else if (score >= 7 && score < 10) {
-         questionArea.innerHTML = `Great job! You got ${score} out of 10 questions correct! You've clearly done your training, Jedi Master!`
-     } else if (score >= 5 && score < 7) {
-         questionArea.innerHTML = `You got ${score} out of 10 questions right. Not bad, Jedi!`
-     } else if (score >= 3 && score < 5) {
-         questionArea.innerHTML = `You scored ${score} out of 10. You may still be a Padawan, but you're on your way to becoming a Jedi!`
+     if (score >= 20) {
+         questionArea.innerHTML = `You got ${score} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`
+     } else if (score >= 17 && score < 20) {
+         questionArea.innerHTML = `Great job! You got ${score} out of 20 questions correct! You've clearly done your training, Jedi Master!`
+     } else if (score >= 13 && score < 17) {
+         questionArea.innerHTML = `You got ${score} out of 20 questions right. Not bad, Jedi!`
+     } else if (score >= 9 && score < 13) {
+         questionArea.innerHTML = `You scored ${score} out of 20. You may still be a Padawan, but you're on your way to becoming a Jedi!`
      } else {
-         questionArea.innerHTML = `${score} out of 10. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`
+         questionArea.innerHTML = `${score} out of 20. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`
      }
      buttonA.style.display = "none";
      buttonB.style.display = "none";
