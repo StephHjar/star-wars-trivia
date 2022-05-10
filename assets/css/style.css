@@ -146,11 +146,15 @@ html {
 
 
 .red {
-    color: red;
+    color: #FF0000;
 }
 
 .green {
-    color: green;
+    color: #00FF00;
+}
+
+.yellow {
+    color: #FFFF00
 }
 
 .close-window {
@@ -171,7 +175,7 @@ html {
 
 .btn {
     background-color: #FFFF00;
-    border: 2px solid black;
+    border: 2px solid 000;
     border-radius: 10px;
     color: #000;
     display: inline-block;
