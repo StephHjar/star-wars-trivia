@@ -53,10 +53,10 @@
          displayResult();
      } else {
          currentQuestion = getRandomQuestion();
-         questionArea.innerHTML = currentQuestion.question;
-         buttonA.innerHTML = currentQuestion.options[0];
-         buttonB.innerHTML = currentQuestion.options[1];
-         buttonC.innerHTML = currentQuestion.options[2];
+         questionArea.innerText = currentQuestion.question;
+         buttonA.innerText = currentQuestion.options[0];
+         buttonB.innerText = currentQuestion.options[1];
+         buttonC.innerText = currentQuestion.options[2];
          handleClickEvent();
      }
  }
@@ -131,7 +131,6 @@
      let oldScore = parseInt(document.getElementsByClassName("score")[0].innerText);
      document.getElementsByClassName("score")[0].innerText = ++oldScore;
  }
-
 
  /**
   * Displays the player's final score and presents the player with the option to play again or share their results
