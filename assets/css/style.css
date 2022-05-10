@@ -189,8 +189,7 @@ html {
     box-shadow: none;
 }
 
-.play-again,
-.share-results {
+.action-btn {
     display: none;
 }
 

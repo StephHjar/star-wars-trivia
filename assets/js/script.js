@@ -5,9 +5,14 @@
  let currentQuestion = null;
  let buttons = document.getElementsByTagName("button");
  let questionArea = document.getElementsByClassName("question-area")[0];
+ let answerButtons = document.getElementsByClassName("answer-btn");
  let buttonA = document.getElementsByClassName("btn-a")[0];
  let buttonB = document.getElementsByClassName("btn-b")[0];
  let buttonC = document.getElementsByClassName("btn-c")[0];
+ let score = document.getElementsByClassName("score")[0];
+ let actionButtons = document.getElementsByClassName("action-btn");
+ let playAgainButton = document.getElementsByClassName("play-again")[0];
+ let shareResultsButton = document.getElementsByClassName("share-results")[0];
 
  document.addEventListener("click", startGame, {
      once: true
@@ -22,7 +27,7 @@
   * Initiates gameplay when the player clicks anywhere on the page
   */
  function startGame() {
-     console.log("startGame is running")
+     console.log("startGame is running");
      document.getElementsByClassName("scroll-div")[0].style.display = "none";
      document.getElementsByClassName("content")[0].style.display = "block";
      renderNextQuestion();
@@ -36,8 +41,11 @@
      document.getElementsByClassName("instructions")[0].style.display = "block";
  }
 
+ /**
+  * Closes the 'how to play' instructions when the X is clicked
+  */
  function closeInstructions() {
-     console.log("closeInstructions is running")
+     console.log("closeInstructions is running");
      document.getElementsByClassName("instructions")[0].style.display = "none";
  }
 
@@ -45,10 +53,8 @@
   * Populates a random question in the question area and answers in the buttons
   */
  function renderNextQuestion() {
-     console.log("renderNextQuestion is running")
-     for (let button of buttons) {
-         button.style = null;
-     }
+     console.log("renderNextQuestion is running");
+     resetButtons();
      if (repeatedQuestion.length >= 20) {
          displayResult();
      } else {
@@ -62,10 +68,19 @@
  }
 
  /**
-  * Pulls a random question from the questions array
+  * Resets styling on the answer buttons once a new question has been generated
+  */
+ function resetButtons() {
+     for (let button of buttons) {
+         button.style = null;
+     }
+ }
+
+ /**
+  * Pulls a random question from the questions array and prevents repeated questions from being displayed
   */
  function getRandomQuestion() {
-     console.log("getRandomQuestion is running")
+     console.log("getRandomQuestion is running");
      currentQuestion = questions[Math.floor(Math.random() * questions.length)];
      if (repeatedQuestion.length >= 20) {
          return false;
@@ -83,30 +98,48 @@
   */
  window.addEventListener('touchstart', function onFirstTouch() {
      window.IS_TOUCH_ENABLED = true;
- }, false)
+ }, false);
 
  /**
-  * Handles button clicks and runs the checkAnswer function
+  * Handles button clicks and touch events, depending on the type of device
   */
  function handleClickEvent() {
-     console.log("handleClickEvent is running")
-     for (let button of buttons) {
+     console.log("handleClickEvent is running"); {
          if (window.IS_TOUCH_ENABLED) {
-             console.log("I am touch enabled");
-             button.addEventListener("touchstart", checkAnswer);
-             button.addEventListener("touchend", renderNextQuestion);
+             handleTouchEvent();
          } else {
-             button.addEventListener("mousedown", checkAnswer);
-             button.addEventListener("mouseup", renderNextQuestion);
+             handleMouseEvent();
          }
      }
  }
 
  /**
-  * Checks whether the user's answer is correct
+  * Handles touch events on answer buttons
+  */
+ function handleTouchEvent() {
+     for (let button of buttons) {
+         console.log("I am touch enabled");
+         button.addEventListener("touchstart", checkAnswer);
+         button.addEventListener("touchend", renderNextQuestion);
+     }
+ }
+
+ /**
+  * Handles mouse events on answer buttons
+  */
+ function handleMouseEvent() {
+     for (let button of buttons) {
+         button.addEventListener("mousedown", checkAnswer);
+         button.addEventListener("mouseup", renderNextQuestion);
+     }
+ }
+
+
+ /**
+  * Checks whether the user's answer is correct, and changes styling of buttons
   */
  function checkAnswer() {
-     console.log("checkAnswer is running")
+     console.log("checkAnswer is running");
      let answer = currentQuestion.answer;
      let response = this.innerText;
      console.log(answer);
@@ -127,9 +160,9 @@
   * Increases the score by one for every correct answer
   */
  function incrementScore() {
-     console.log("incrementScore is running")
+     console.log("incrementScore is running");
      let oldScore = parseInt(document.getElementsByClassName("score")[0].innerText);
-     document.getElementsByClassName("score")[0].innerText = ++oldScore;
+     score.innerText = ++oldScore;
  }
 
  /**
@@ -139,23 +172,24 @@
      console.log("displayResult is running");
      let score = parseInt(document.getElementsByClassName("score")[0].innerText);
      if (score >= 20) {
-         questionArea.innerHTML = `You got ${score} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`
+         questionArea.innerHTML = `You got ${score} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`;
      } else if (score >= 17 && score < 20) {
-         questionArea.innerHTML = `Great job! You got ${score} out of 20 questions correct! You've clearly done your training, Jedi Master!`
+         questionArea.innerHTML = `Great job! You got ${score} out of 20 questions correct! You've clearly done your training, Jedi Master!`;
      } else if (score >= 13 && score < 17) {
-         questionArea.innerHTML = `You got ${score} out of 20 questions right. Not bad, Jedi!`
+         questionArea.innerHTML = `You got ${score} out of 20 questions right. Not bad, Jedi!`;
      } else if (score >= 9 && score < 13) {
-         questionArea.innerHTML = `You scored ${score} out of 20. You may still be a Padawan, but you're on your way to becoming a Jedi!`
+         questionArea.innerHTML = `You scored ${score} out of 20. You may still be a Padawan, but you're on your way to becoming a Jedi!`;
      } else {
-         questionArea.innerHTML = `${score} out of 20. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`
+         questionArea.innerHTML = `${score} out of 20. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`;
      }
-     buttonA.style.display = "none";
-     buttonB.style.display = "none";
-     buttonC.style.display = "none";
-     document.getElementsByClassName("play-again")[0].style.display = "inline-block";
-     document.getElementsByClassName("share-results")[0].style.display = "inline-block";
-     document.getElementsByClassName("play-again")[0].addEventListener("click", newGame);
-     document.getElementsByClassName("share-results")[0].addEventListener("click", shareResults);
+     for (let answerButton of answerButtons) {
+         answerButton.style.display = "none";
+     }
+     for (let actionButton of actionButtons) {
+         actionButton.style.display = "inline-block";
+     }
+     playAgainButton.addEventListener("click", newGame);
+     shareResultsButton.addEventListener("click", shareResults);
  }
 
  /**
@@ -182,6 +216,6 @@
      copyToClipboard(textArea.innerHTML);
 
      function copyToClipboard(text) {
-         window.prompt("Copy the below text to your clipboard, and share with your friends!", text)
+         window.prompt("Copy the text below, and share it with your friends!", text);
      }
  }
