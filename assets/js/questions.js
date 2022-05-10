@@ -39,3 +39,48 @@ export let questions = [{
     "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
     "answer": "Jagged Fel"
 }];
+
+
+
+
+{
+    "question": "Who does Jaina Solo marry?",
+    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
+    "answer": "Jagged Fel"
+}{
+    "question": "Who does Jaina Solo marry?",
+    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
+    "answer": "Jagged Fel"
+}{
+    "question": "Who does Jaina Solo marry?",
+    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
+    "answer": "Jagged Fel"
+}{
+    "question": "Who does Jaina Solo marry?",
+    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
+    "answer": "Jagged Fel"
+}{
+    "question": "Who does Jaina Solo marry?",
+    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
+    "answer": "Jagged Fel"
+}{
+    "question": "Who does Jaina Solo marry?",
+    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
+    "answer": "Jagged Fel"
+}{
+    "question": "Who does Jaina Solo marry?",
+    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
+    "answer": "Jagged Fel"
+}{
+    "question": "Who does Jaina Solo marry?",
+    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
+    "answer": "Jagged Fel"
+}{
+    "question": "Who does Jaina Solo marry?",
+    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
+    "answer": "Jagged Fel"
+}{
+    "question": "Who does Jaina Solo marry?",
+    "options": ["Zekk", "Kyp Durron", "Jagged Fel"],
+    "answer": "Jagged Fel"
+}
