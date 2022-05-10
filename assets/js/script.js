@@ -66,6 +66,7 @@
      }
  }
 
+
  function displayQuestion() {
      currentQuestion = getRandomQuestion();
      questionArea.innerText = currentQuestion.question;
@@ -92,8 +93,7 @@
      currentQuestion = questions[Math.floor(Math.random() * questions.length)];
      if (repeatedQuestion.length >= 20) {
          return false;
-     } else
-     if (repeatedQuestion.indexOf(currentQuestion) >= 0) {
+     } else if (repeatedQuestion.indexOf(currentQuestion) >= 0) {
          return getRandomQuestion();
      } else {
          repeatedQuestion.push(currentQuestion);
@@ -119,7 +119,6 @@
      }
  }
 
-
  /**
   * Handles touch events on answer buttons
   */
@@ -141,7 +140,7 @@
  }
 
  /**
-  * Checks whether the user's answer is correct, and changes styling of buttons
+  * Checks whether the user's answer is correct, and changes styling of buttons accordingly
   */
  function checkAnswer() {
      let answer = currentQuestion.answer;
