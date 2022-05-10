@@ -12,9 +12,11 @@ The Star Wars Legends Trivia site is a fully responsive website that allows play
 
 - __The Star Wars Legends Trivia Logo and Heading__
 
-  - 
-
-![Logo](IMAGE TO GO HERE)
+  - The logo functions as a heading describing the purpose of the site (trivia related to Star Wars Legends). Alt text is included for screen readers, and the logo is responsive (changes size and layout depending on the screen size.)
+- Logo on Desktop:
+![Logo on Desktop](assets/images/README/header-desktop.png)
+- Logo on Mobile:
+![Logo on Mobile](assets/images/README/header-mobile.png)
 
 - __The Game Area__
 
