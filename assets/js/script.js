@@ -45,7 +45,7 @@
   * Populates a random question in the question area and answers in the buttons
   */
  function renderNextQuestion() {
-     console.log("renderNExtQuestion is running")
+     console.log("renderNextQuestion is running")
      for (let button of buttons) {
          button.style = null;
      }
