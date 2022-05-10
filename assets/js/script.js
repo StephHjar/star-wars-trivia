@@ -35,7 +35,6 @@
   * Initiates gameplay when the player clicks anywhere on the page
   */
  function startGame() {
-     console.log("startGame is running");
      document.getElementsByClassName("scroll-div")[0].style.display = "none";
      document.getElementsByClassName("content")[0].style.display = "block";
      renderNextQuestion();
@@ -45,7 +44,6 @@
   * Shows the 'how to play' instructions in a popup window
   */
  function showInstructions() {
-     console.log("showInstructions is running");
      instructions.style.display = "block";
  }
 
@@ -53,7 +51,6 @@
   * Closes the 'how to play' instructions when the X is clicked
   */
  function closeInstructions() {
-     console.log("closeInstructions is running");
      instructions.style.display = "none";
  }
 
@@ -61,7 +58,6 @@
   * Populates a random question in the question area and answers in the buttons
   */
  function renderNextQuestion() {
-     console.log("renderNextQuestion is running");
      resetButtons();
      if (repeatedQuestion.length >= 20) {
          displayResult();
@@ -88,7 +84,6 @@
   * Pulls a random question from the questions array and prevents repeated questions from being displayed
   */
  function getRandomQuestion() {
-     console.log("getRandomQuestion is running");
      currentQuestion = questions[Math.floor(Math.random() * questions.length)];
      if (repeatedQuestion.length >= 20) {
          return false;
@@ -112,21 +107,19 @@
   * Handles button clicks and touch events, depending on the type of device
   */
  function handleClickEvent() {
-     console.log("handleClickEvent is running"); {
-         if (window.IS_TOUCH_ENABLED) {
-             handleTouchEvent();
-         } else {
-             handleMouseEvent();
-         }
+     if (window.IS_TOUCH_ENABLED) {
+         handleTouchEvent();
+     } else {
+         handleMouseEvent();
      }
  }
+
 
  /**
   * Handles touch events on answer buttons
   */
  function handleTouchEvent() {
      for (let button of buttons) {
-         console.log("I am touch enabled");
          button.addEventListener("touchstart", checkAnswer);
          button.addEventListener("touchend", renderNextQuestion);
      }
@@ -146,11 +139,8 @@
   * Checks whether the user's answer is correct, and changes styling of buttons
   */
  function checkAnswer() {
-     console.log("checkAnswer is running");
      let answer = currentQuestion.answer;
      let response = this.innerText;
-     console.log(answer);
-     console.log(response);
      if (answer === response) {
          this.style.backgroundColor = "green";
          incrementScore();
@@ -167,7 +157,6 @@
   * Increases the score by one for every correct answer
   */
  function incrementScore() {
-     console.log("incrementScore is running");
      let oldScore = parseInt(score.innerText);
      score.innerText = ++oldScore;
  }
@@ -176,7 +165,6 @@
   * Displays the player's final score and presents the player with the option to play again or share their results
   */
  function displayResult() {
-     console.log("displayResult is running");
      if (scoreCount >= 20) {
          questionArea.innerHTML = `You got ${scoreCount} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`;
      } else if (scoreCount >= 17 && score < 20) {
@@ -205,12 +193,10 @@
      shareResultsButton.addEventListener("click", shareResults);
  }
 
-
  /**
   * Refreshes the question area and the scoreboard to start a new game
   */
  function newGame() {
-     console.log("newGame is running");
      repeatedQuestion.length = 0;
      document.getElementsByClassName("score")[0].innerText = "0";
      renderNextQuestion();
@@ -220,7 +206,6 @@
   * Allows the user to share their results by copying and pasting their score to and from the clipboard. Code adapted from StackOverflow, credit in README
   */
  function shareResults() {
-     console.log("shareResult is running");
      let textArea = document.createElement("textarea");
      textArea.style.display = "none";
      document.body.appendChild(textArea);
