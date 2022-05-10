@@ -62,14 +62,19 @@
      if (repeatedQuestion.length >= 20) {
          displayResult();
      } else {
-         currentQuestion = getRandomQuestion();
-         questionArea.innerText = currentQuestion.question;
-         buttonA.innerText = currentQuestion.options[0];
-         buttonB.innerText = currentQuestion.options[1];
-         buttonC.innerText = currentQuestion.options[2];
-         handleClickEvent();
+         displayQuestion();
      }
  }
+
+ function displayQuestion() {
+     currentQuestion = getRandomQuestion();
+     questionArea.innerText = currentQuestion.question;
+     buttonA.innerText = currentQuestion.options[0];
+     buttonB.innerText = currentQuestion.options[1];
+     buttonC.innerText = currentQuestion.options[2];
+     handleClickEvent();
+ }
+
 
  /**
   * Resets styling on the answer buttons once a new question has been generated

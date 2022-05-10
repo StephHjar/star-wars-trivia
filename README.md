@@ -34,15 +34,17 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 - Logo on Mobile:
 ![Logo on Mobile](assets/images/README/header-mobile.png)
 
+- __The Instructions Area__
+
 - __The Game Area__
 
-  -  Questions are displayed in a random order (for replayability), and answers are also displayed randomly (so players can't simply memorize the order of the answers). 
+  -  Questions are displayed in a random order (for replayability)
 
 ![Game](IMAGE TO GO HERE)
 
 - __The Score Area__
 
-  - This section will allow the user to see exactly how many correct answers they have provided, and the number of total questions in the quiz. 
+  - This section will allow the user to see how many correct answers they have provided, and the number of total questions in the quiz. 
 
 ![score](IMAGE TO GO HERE)
 
@@ -54,7 +56,7 @@ In addition, you may also use this section to discuss plans for additional featu
 
 - A high score board, where players can log their score and compare it with other players'. This will require the data to be stored in a database, which is beyond my abilities at this stage, but will be added in the future. 
 
-- Other Star Wars Trivia categories, like: the Original Trilogy, Prequels, Old Republic, and Disney Canon. This will give the player the option of playing multiple different trivia games with different subject matter. 
+- Other Star Wars Trivia categories, like: the Original Trilogy, Prequels, Old Republic, and Disney Canon. This will give the player the option of playing multiple different trivia games with different subject matters. 
 
 ## Testing 
 
@@ -105,12 +107,7 @@ This section should describe the process you went through to deploy the project 
 
 The live link can be found here - https://code-institute-org.github.io/love-maths/
 
-
 ## Credits 
-
-In this section you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-
-You can break the credits section up into Content and Media, depending on what you have included in your project. 
 
 ### Content 
 
