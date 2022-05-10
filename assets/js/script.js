@@ -215,6 +215,7 @@
      document.getElementsByClassName("score")[0].innerText = "0";
      renderNextQuestion();
  }
+
  /**
   * Allows the user to share their results by copying and pasting their score to and from the clipboard. Code adapted from StackOverflow, credit in README
   */

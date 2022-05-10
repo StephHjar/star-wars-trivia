@@ -118,8 +118,7 @@ You can break the credits section up into Content and Media, depending on what y
 - [Favicon.io](https://favicon.io/) was used to create the favicon. 
 - [Google Fonts](https://fonts.google.com/specimen/Oswald) was used for the Oswald font.
 - [TinyPNG](https://tinypng.com/) was used to compress images.
-- The photos used on the home and sign up page are from This Open Source site
-- The images used for the gallery page were taken from this other open source site
+- [Pixlr](https://pixlr.com/x/#editor) was used to edit the logo for use on smaller devices. 
 
 ## Other General Project Advice
 
