@@ -3,13 +3,21 @@
  } from "./questions.js";
 
  let currentQuestion = null;
+
+ let instructions = document.getElementsByClassName("instructions")[0];
+
  let buttons = document.getElementsByTagName("button");
+
  let questionArea = document.getElementsByClassName("question-area")[0];
+
  let answerButtons = document.getElementsByClassName("answer-btn");
  let buttonA = document.getElementsByClassName("btn-a")[0];
  let buttonB = document.getElementsByClassName("btn-b")[0];
  let buttonC = document.getElementsByClassName("btn-c")[0];
+
  let score = document.getElementsByClassName("score")[0];
+ let scoreCount = parseInt(score.innerText);
+
  let actionButtons = document.getElementsByClassName("action-btn");
  let playAgainButton = document.getElementsByClassName("play-again")[0];
  let shareResultsButton = document.getElementsByClassName("share-results")[0];
@@ -38,7 +46,7 @@
   */
  function showInstructions() {
      console.log("showInstructions is running");
-     document.getElementsByClassName("instructions")[0].style.display = "block";
+     instructions.style.display = "block";
  }
 
  /**
@@ -46,7 +54,7 @@
   */
  function closeInstructions() {
      console.log("closeInstructions is running");
-     document.getElementsByClassName("instructions")[0].style.display = "none";
+     instructions.style.display = "none";
  }
 
  /**
@@ -134,7 +142,6 @@
      }
  }
 
-
  /**
   * Checks whether the user's answer is correct, and changes styling of buttons
   */
@@ -147,7 +154,7 @@
      if (answer === response) {
          this.style.backgroundColor = "green";
          incrementScore();
-     } else if (response === "Play Again") {
+     } else if (this === "Play Again") {
          this.style.backgroundColor = "lightyellow";
      } else if (response === "Share Results") {
          this.style.backgroundColor = "lightyellow";
@@ -161,7 +168,7 @@
   */
  function incrementScore() {
      console.log("incrementScore is running");
-     let oldScore = parseInt(document.getElementsByClassName("score")[0].innerText);
+     let oldScore = parseInt(score.innerText);
      score.innerText = ++oldScore;
  }
 
@@ -170,18 +177,24 @@
   */
  function displayResult() {
      console.log("displayResult is running");
-     let score = parseInt(document.getElementsByClassName("score")[0].innerText);
-     if (score >= 20) {
-         questionArea.innerHTML = `You got ${score} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`;
-     } else if (score >= 17 && score < 20) {
-         questionArea.innerHTML = `Great job! You got ${score} out of 20 questions correct! You've clearly done your training, Jedi Master!`;
-     } else if (score >= 13 && score < 17) {
-         questionArea.innerHTML = `You got ${score} out of 20 questions right. Not bad, Jedi!`;
-     } else if (score >= 9 && score < 13) {
-         questionArea.innerHTML = `You scored ${score} out of 20. You may still be a Padawan, but you're on your way to becoming a Jedi!`;
+     if (scoreCount >= 20) {
+         questionArea.innerHTML = `You got ${scoreCount} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`;
+     } else if (scoreCount >= 17 && score < 20) {
+         questionArea.innerHTML = `Great job! You got ${scoreCount} out of 20 questions correct! You've clearly done your training, Jedi Master!`;
+     } else if (scoreCount >= 13 && score < 17) {
+         questionArea.innerHTML = `You got ${scoreCount} out of 20 questions right. Not bad, Jedi!`;
+     } else if (scoreCount >= 9 && score < 13) {
+         questionArea.innerHTML = `You scored ${scoreCount} out of 20. You may still be a Padawan, but you're on your way to becoming a Jedi!`;
      } else {
-         questionArea.innerHTML = `${score} out of 20. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`;
+         questionArea.innerHTML = `${scoreCount} out of 20. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`;
      }
+     displayActionButtons();
+ }
+
+ /**
+  * Displays action buttons ("New Game" & "Share Results") and allows the user to initiate their respective functions
+  */
+ function displayActionButtons() {
      for (let answerButton of answerButtons) {
          answerButton.style.display = "none";
      }
@@ -191,6 +204,7 @@
      playAgainButton.addEventListener("click", newGame);
      shareResultsButton.addEventListener("click", shareResults);
  }
+
 
  /**
   * Refreshes the question area and the scoreboard to start a new game
@@ -206,13 +220,12 @@
   */
  function shareResults() {
      console.log("shareResult is running");
-     let score = parseInt(document.getElementsByClassName("score")[0].innerText);
      let textArea = document.createElement("textarea");
      textArea.style.display = "none";
      document.body.appendChild(textArea);
      textArea.focus();
      textArea.select();
-     textArea.innerHTML = `I got ${score} out of 20 questions right at Star Wars Legends trivia! Play here: https://stephhjar.github.io/star-wars-trivia/`;
+     textArea.innerHTML = `I got ${scoreCount} out of 20 questions right at Star Wars Legends trivia! Play here: https://stephhjar.github.io/star-wars-trivia/`;
      copyToClipboard(textArea.innerHTML);
 
      function copyToClipboard(text) {

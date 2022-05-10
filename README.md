@@ -101,7 +101,7 @@ You can break the credits section up into Content and Media, depending on what y
 - This article [CSS-Tricks](https://css-tricks.com/perfect-full-page-background-image/) was used for tips on how to make a full-page background image responsive. 
 - [This page](https://www.w3schools.com/howto/howto_css_image_responsive.asp) on W3 Schools was used to learn how to make the logo image responsive.
 - [This page](https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array) on StackOverflow was used to understand how to select a random object from an array.
-- Code Insitutute's [Love Running Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/8775beaed6ed403d92318845af971b30/?child=first) was used for help in connecting event listeners to buttons.
+- Code Insitutute's [Love Maths Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/8775beaed6ed403d92318845af971b30/?child=first) was used for help in connecting event listeners to buttons and for incrementing the score.
 - [This code on Hubspot](https://blog.hubspot.com/website/scrolling-text-css) was used to add the scrolling text to the splash page.
 - Part of [this code on GeeksforGeeks](https://www.geeksforgeeks.org/how-to-detect-touch-screen-device-using-javascript/?ref=lbp) was used to detect whether a user is on a touch screen device. 
 - Part of [this code on codeburst.io](https://codeburst.io/the-only-way-to-detect-touch-with-javascript-7791a3346685) was used to detect whether a touch event has actually happened, and adjust button behaviour accordingly. 
