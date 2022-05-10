@@ -6,6 +6,22 @@ The Star Wars Legends Trivia site is a fully responsive website that allows play
 
 ![Responsive Mockup](LINK TO GO HERE)
 
+## Wireframes
+
+Wireframes were created before development, for desktop, tablet, and mobile. This helped to guide design and code structure.
+
+### Desktop Wireframes
+![Desktop Wireframe for Results Screen](assets/images/README/Wireframe-Desktop-Gameplay.png)
+![Desktop Wireframe for Results Screen](assets/images/README/Wireframe-Desktop-Results.png)
+
+### Tablet Wireframes
+![Tablet Wireframe for Results Screen](assets/images/README/Wireframe-Tablet-Gameplay.png)
+![Tablet Wireframe for Results Screen](assets/images/README/Wireframe-Tablet-Results.png)
+
+### Mobile Wireframes
+![Mobile Wireframe for Results Screen](assets/images/README/Wireframe-Mobile-Gameplay.png)
+![Mobile Wireframe for Results Screen](assets/images/README/Wireframe-Mobile-Results.png)
+
 ## Features 
 
 ### Existing Features
