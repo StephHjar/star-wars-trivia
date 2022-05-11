@@ -113,18 +113,18 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 
 ### Unfixed Bugs
 
-You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
+- None
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub) 
-
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
-  - In the GitHub repository, navigate to the Settings tab 
-  - From the source section drop-down menu, select the Master Branch
-  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
+  - From [the GitHub repository](https://github.com/StephHjar/star-wars-trivia), navigate to the Settings tab 
+  - On the left-hand side of the page, select the 'Pages' option
+  - At the top of the page under 'Source', select 'Branch: main' from the first dropdown menu. Select '/(root)' from the second dropdown menu. Click save.
+  - A notice will appear above the Source section saying 'Your site is ready to be published at' followed by the URL, with a blue background
+  - Once the site is published, this notice will update to 'Your site is published at', followed by the URL, with a green background
 
-The live link can be found here - https://code-institute-org.github.io/love-maths/
+The live link can be found here - https://stephhjar.github.io/star-wars-trivia
 
 ## Credits 
 
