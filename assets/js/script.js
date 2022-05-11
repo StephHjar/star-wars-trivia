@@ -24,9 +24,7 @@
      document.addEventListener("click", startGame, {
          once: true
      });
-
      document.getElementsByClassName("how-to-play")[0].addEventListener("click", showInstructions);
-
  });
 
  /**
@@ -54,7 +52,7 @@
  }
 
  /**
-  * Populates a random question in the question area and answers in the buttons, until the questions have all been asked
+  * Generates a random question to populate until all questions have all been asked, at which point results are displayed
   */
  function renderNextQuestion() {
      console.log("renderNextQuestion is running");
@@ -66,12 +64,18 @@
      }
  }
 
+ /**
+  * Checks whether the maximum number of questions (20) has been displayed to the player
+  */
  function isMaximumQuestionsLimitReached() {
      if (repeatedQuestion.length >= 20) {
          return true;
      };
  }
 
+ /**
+  * Displays each question in the question area
+  */
  function displayQuestion() {
      currentQuestion = getRandomQuestion();
      questionArea.innerText = currentQuestion.question;
@@ -79,6 +83,9 @@
      handleClickEvent();
  }
 
+ /**
+  * Displays each answer in the answer buttons
+  */
  function displayAnswers() {
      buttonA.innerText = currentQuestion.options[0];
      buttonB.innerText = currentQuestion.options[1];
@@ -195,7 +202,7 @@
  }
 
  /**
-  * Displays the player's final score and presents the player with the option to play again or share their results
+  * Displays the player's final score 
   */
  function displayResult() {
      if (scoreCount >= 20) {
