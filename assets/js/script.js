@@ -53,10 +53,9 @@
   * Populates a random question in the question area and answers in the buttons, until the questions have all been asked
   */
  function renderNextQuestion() {
-     console.log("renderNextQuestion is running")
+     console.log("renderNextQuestion is running");
      resetButtons();
-     /*if (isMaximumQuestionsLimitReached()) {*/
-     if (repeatedQuestion.length >= 20) {
+     if (isMaximumQuestionsLimitReached()) {
          displayResult();
      } else {
          displayQuestion();
@@ -64,9 +63,10 @@
  }
 
  function isMaximumQuestionsLimitReached() {
-     if (repeatedQuestion.length >= 20);
+     if (repeatedQuestion.length >= 20) {
+         return true;
+     };
  }
-
 
  function displayQuestion() {
      currentQuestion = getRandomQuestion();
@@ -74,7 +74,6 @@
      displayAnswers();
      handleClickEvent();
  }
-
 
  function displayAnswers() {
      buttonA.innerText = currentQuestion.options[0];
@@ -100,8 +99,7 @@
  function getRandomQuestion() {
      console.log("getRandomQuestion is running");
      currentQuestion = questions[Math.floor(Math.random() * questions.length)];
-     /*if (isMaximumQuestionsLimitReached()) {*/
-     if (repeatedQuestion.length >= 20) {
+     if (isMaximumQuestionsLimitReached()) {
          return false;
      } else if (repeatedQuestion.indexOf(currentQuestion) >= 0) {
          return getRandomQuestion();
