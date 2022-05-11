@@ -2,7 +2,6 @@
      questions
  } from "./questions.js";
 
- let currentQuestion = null;
  let scrollDiv = document.getElementsByClassName("scroll-div")[0];
  let content = document.getElementsByClassName("content")[0];
  let howToPlay = document.getElementsByClassName("how-to-play")[0];
@@ -19,6 +18,7 @@
  let actionButtons = document.getElementsByClassName("action-btn");
  let playAgainButton = document.getElementsByClassName("play-again")[0];
  let shareResultsButton = document.getElementsByClassName("share-results")[0];
+ let currentQuestion = null;
  let repeatedQuestion = [];
 
  /**

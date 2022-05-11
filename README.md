@@ -74,27 +74,31 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 
 - Chrome Developer tools were used to test responsiveness - every device option was tested, and I checked all screen sizes from 300px to 3000px. 
 
+- WAVE was used to generate an accessibility report, with no errors found.
+- ![WAVE accessibility report](assets/images/README/wave-accessibility.png)
+
 - __Lighthouse Testing__ 
 - Lighthouse within Chrome Developer Tools was used to test for Performance, Accessibility, Best Practices, and SEO. 
-- Mobile Results: 
-![Mobile Lighthouse Test Results]()
 - Desktop Results: 
-![Desktop Lighthouse Test Results]()
-
+![Desktop Lighthouse Test Results](assets/images/README/lighthouse-desktop.png)
+- Mobile Results: 
+![Mobile Lighthouse Test Results](assets/images/README/lighthouse-mobile.png)
+- Scores for Performance and Best Practices are lower on Mobile because fixed image sizes are not specified (for the header and lightsaber images), which causes longer loading times. While not optimal, this is intentional so that the image size adjusts with the screen size, to make the site responsive. 
 
 ### Validator Testing 
 
 - HTML
-    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-maths%2F)
+    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstephhjar.github.io%2Fstar-wars-trivia%2F)
 - CSS
-    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-maths%252F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstephhjar.github.io%2Fstar-wars-trivia%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - JavaScript
-    - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
+    - script.js: No errors were found when passing through the official [Jshint validator](https://jshint.com/)
       - The following metrics were returned: 
       - There are 11 functions in this file.
       - Function with the largest signature takes 2 arguments, while the median is 0.
       - Largest function has 10 statements in it, while the median is 3.
       - The most complex function has a cyclomatic complexity value of 4 while the median is 2.
+    - questions.js: No errors were found when passing through the official [Jshint validator](https://jshint.com/)
 
 ### Fixed Bugs
 
