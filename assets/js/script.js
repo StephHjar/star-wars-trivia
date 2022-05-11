@@ -73,7 +73,7 @@
  function isMaximumQuestionsLimitReached() {
      if (repeatedQuestion.length >= 20) {
          return true;
-     };
+     }
  }
 
  /**
@@ -147,7 +147,7 @@
      }
      for (let actionButton of actionButtons) {
          actionButton.addEventListener("touchstart", styleActionButton);
-         actionButton.addEventListener("touchend", unStyleActionButton)
+         actionButton.addEventListener("touchend", unStyleActionButton);
      }
  }
 
@@ -205,9 +205,9 @@
   */
  function displayResult() {
      if (scoreCount >= 20) {
-         questionArea.innerHTML = `You got ${scoreCount} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`
+         questionArea.innerHTML = `You got ${scoreCount} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`;
      } else if (scoreCount >= 17 && score < 20) {
-         questionArea.innerHTML = `Great job! You got ${scoreCount} out of 20 questions correct! You've clearly done your training, Jedi Master!`
+         questionArea.innerHTML = `Great job! You got ${scoreCount} out of 20 questions correct! You've clearly done your training, Jedi Master!`;
      } else if (scoreCount >= 13 && score < 17) {
          questionArea.innerHTML = `You got ${scoreCount} out of 20 questions right. Not bad, Jedi!`;
      } else if (scoreCount >= 9 && score < 13) {
