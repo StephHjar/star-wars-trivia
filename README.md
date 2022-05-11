@@ -38,23 +38,26 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 - __The Instructions Area__
 
 - The instructions area gives the user clear instructions about how to play the game. There is an X in the top right corner to close the instructions when they are no longer needed. 
-![Instructions Area](assets/images/README/instructions-area.png)
+- ![Instructions Area](assets/images/README/instructions-area.png)
 
 - __The Game Area__
 
-  -  Questions are displayed in a random order (for replayability), along with 3 answer options in the buttons below. 
+-  Questions are displayed in a random order (for replayability), along with 3 answer options in the buttons below. 
+- The game area (questions change every time an answer is selected): 
 
-![Game](IMAGE TO GO HERE)
+- ![Game Area](assets/images/README/game-area.png)
 
 - __The Score Area__
 
-  - This section will allow the user to see how many correct answers they have provided, and the number of total questions in the quiz. 
+- This section will allow the user to see how many correct answers they have provided, against the total number of questions in the quiz. 
 
-![score](IMAGE TO GO HERE)
+- ![Score Area](assets/images/README/score-area.png)
 
-For some/all of your features, you may choose to reference the specific project files that implement them.
+- __Footer__
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+- The footer links the player to Wookieepedia (the Star Wars Wikipedia), to help brush up their Star Wars knowledge. 
+
+- ![Footer](assets/images/README/footer.png)
 
 ### Features Left to Implement
 
@@ -62,15 +65,21 @@ In addition, you may also use this section to discuss plans for additional featu
 
 - Other Star Wars Trivia categories, like: the Original Trilogy, Prequels, Old Republic, and Disney Canon. This will give the player the option of playing multiple different trivia games with different subject matters. 
 
+- A "Contact Me" page, so players can give direct feedback to the developer, including suggestions for new questions, bug reports, and features requests. Using JavaScript libraries to create a functioning Contact Me form was beyond the scope of this project at this time. 
+
 ## Testing 
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+### Manual Testing
+- This page was manually tested for functionality and responsiveness on the following devices: iPad Air, iPhone XR, iPhone 12 Pro Max, MacBookAir, and MacBook Pro. It was manually tested in both Chrome and Safari. 
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+- Chrome Developer tools were used to test responsiveness - every device option was tested, and I checked all screen sizes from 300px to 3000px. 
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+- __Lighthouse Testing__ 
+- Lighthouse within Chrome Developer Tools was used to test for Performance, Accessibility, Best Practices, and SEO. 
+- Mobile Results: 
+![Mobile Lighthouse Test Results]()
+- Desktop Results: 
+![Desktop Lighthouse Test Results]()
 
 
 ### Validator Testing 
