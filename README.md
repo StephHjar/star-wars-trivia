@@ -37,9 +37,12 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 
 - __The Instructions Area__
 
+- The instructions area gives the user clear instructions about how to play the game. There is an X in the top right corner to close the instructions when they are no longer needed. 
+![Instructions Area](assets/images/README/instructions-area.png)
+
 - __The Game Area__
 
-  -  Questions are displayed in a random order (for replayability)
+  -  Questions are displayed in a random order (for replayability), along with 3 answer options in the buttons below. 
 
 ![Game](IMAGE TO GO HERE)
 
