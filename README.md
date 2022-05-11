@@ -99,11 +99,17 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 ### Fixed Bugs
 
 - The check answer function was not working correctly because the answers in each button were set to 'text-transform: uppercase', which meant they did not match the text in the array. Removed the text-transform and the function started working correctly.
+
 - The background colour of each button was set to change to red or green if the answer was incorrect (red) or correct (green), but then background colour would stay red or green throughout the next questions. Added an 'onmouseup' event to the 'renderNextQuestion' function that reset the styling to null (CSS default). This resolved the error. Used [this page](https://stackoverflow.com/questions/10698942/how-to-return-a-javascript-set-style-property-to-css-default) on StackOverflow to help troubleshoot.
+
 - The drop shadow that appears on each button on hover was not working if that button was clicked to answer the previous question. Changed CSS style rule that removes the drop shadow from ":focus" to ":active" and this resolved the error, as the button is no longer active after it has been clicked, but it is still in focus. Removed the drop shadow from smaller screen size devices / touch screen devices as the active property stays active after a tap is over.
 - The checkAnswer and renderNextQuestion functions were running twice on touch screen devices, due to the screen sometimes reading both 'touchstart' and 'mousedown', and 'touchend' and 'mouseup' events on buttons. Added scripting to detect whether a user is on a touchscreen device, and only running one event listener as relevant.
+
 - The function to tell whether a user was on a touch screen device was also reading my Macbook Air as a touch screen device, which meant the buttons were not working on my laptop (were waiting for touchstart and touchend events, instead of mousedown and mouseup events). I found code on [Codeburst.io](https://codeburst.io/the-only-way-to-detect-touch-with-javascript-7791a3346685) that reads whether a touch event has actually happened, instead of whether a device is touch screen enabled, and this resolved the error. 
+
 - Every time the instructions window was opened by clicking "How to Play", the page reloaded entirely. I used StackOverflow to troubleshoot, and discovered via [this page](https://stackoverflow.com/questions/4823973/javascript-page-reloads-with-eventlistener-click) that this was because the "How to Play" link was empty (a href="") instead of (a href="#").
+
+- I was getting 3 errors in the [WAVE Accessibility Report](https://wave.webaim.org/) due to having buttons with no content. My 3 answer buttons had no content in the main HTML document, as the answers are populated using JavaScript. I tried to solve this by adding aria-labels within the same JavaScript function, but this didn't resolve the error, and just resulted in redundant aria-labels. I solved it by adding placeholder text in the HTML document ("Answer A", "Answer B", and "Answer C") which will be overwritten by the JavaScript function. 
 
 ### Unfixed Bugs
 

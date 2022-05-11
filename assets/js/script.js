@@ -90,9 +90,6 @@
      buttonA.innerText = currentQuestion.options[0];
      buttonB.innerText = currentQuestion.options[1];
      buttonC.innerText = currentQuestion.options[2];
-     buttonA.ariaLabel = currentQuestion.options[0];
-     buttonB.ariaLabel = currentQuestion.options[1];
-     buttonC.ariaLabel = currentQuestion.options[2];
  }
 
  /**
