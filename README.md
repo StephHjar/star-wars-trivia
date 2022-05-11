@@ -32,34 +32,30 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 - __The Star Wars Legends Trivia Logo and Heading__
 
   - The logo functions as a heading describing the purpose of the site (trivia related to Star Wars Legends). Alt text is included for screen readers, and the logo is responsive (changes size and layout depending on the screen size.)
-- Logo on Desktop:
-![Logo on Desktop](assets/images/README/header-desktop.png)
-- Logo on Mobile:
-![Logo on Mobile](assets/images/README/header-mobile.png)
+    - Logo on Desktop:
+    ![Logo on Desktop](assets/images/README/header-desktop.png)
+    - Logo on Mobile:
+    ![Logo on Mobile](assets/images/README/header-mobile.png)
 
 - __The Instructions Area__
 
-- The instructions area gives the user clear instructions about how to play the game. There is an X in the top right corner to close the instructions when they are no longer needed. 
-- ![Instructions Area](assets/images/README/instructions-area.png)
+  - The instructions area gives the user clear instructions about how to play the game. There is an X in the top right corner to close the instructions when they are no longer needed. 
+    ![Instructions Area](assets/images/README/instructions-area.png)
 
 - __The Game Area__
 
--  Questions are displayed in a random order (for replayability), along with 3 answer options in the buttons below. 
-- The game area (questions change every time an answer is selected): 
-
-- ![Game Area](assets/images/README/game-area.png)
+  -  Questions are displayed in a random order (for replayability), along with 3 answer options in the buttons below. 
+    ![Game Area](assets/images/README/game-area.png)
 
 - __The Score Area__
 
-- This section will allow the user to see how many correct answers they have provided, against the total number of questions in the quiz. 
-
-- ![Score Area](assets/images/README/score-area.png)
+  - This section allows the  user to see how many correct answers they have provided, against the total number of questions in the quiz. 
+    ![Score Area](assets/images/README/score-area.png)
 
 - __Footer__
 
-- The footer links the player to Wookieepedia (the Star Wars Wikipedia), to help brush up their Star Wars knowledge. 
-
-- ![Footer](assets/images/README/footer.png)
+  - The footer links the player to Wookieepedia (the Star Wars Wikipedia), to help brush up their Star Wars knowledge. 
+    ![Footer](assets/images/README/footer.png)
 
 ### Features Left to Implement
 
