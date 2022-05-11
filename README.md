@@ -4,6 +4,8 @@ Star Wars Legends Trivia is an online quiz for Star Wars fans to test their know
 
 The Star Wars Legends Trivia site is a fully responsive website that allows players to answer multiple choice trivia questions on desktop, tablet, or mobile. Players will see their score as they play, and will have the option to replay the trivia game as often as they like. They can also share their results after completing the quiz. Questions are displayed in a random order for replayability. 
 
+The live link can be found here - https://stephhjar.github.io/star-wars-trivia
+
 Responsive Mockup from [ui.dev](https://ui.dev/amiresponsive):
 ![Responsive Mockup](assets/images/README/responsive-layout.png)
 
@@ -127,8 +129,6 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
   - At the top of the page under 'Source', select 'Branch: main' from the first dropdown menu. Select '/(root)' from the second dropdown menu. Click save.
   - A notice will appear above the Source section saying 'Your site is ready to be published at' followed by the URL, with a blue background
   - Once the site is published, this notice will update to 'Your site is published at', followed by the URL, with a green background
-
-The live link can be found here - https://stephhjar.github.io/star-wars-trivia
 
 ## Credits 
 
