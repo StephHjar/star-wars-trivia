@@ -92,13 +92,13 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 - CSS
     - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstephhjar.github.io%2Fstar-wars-trivia%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - JavaScript
-    - script.js: No errors were found when passing through the official [Jshint validator](https://jshint.com/)
+    - script.js: When first passed, 1 extra semicolon and 3 missing semicolons were found. On second pass, no errors were found when passing through the official [Jshint validator](https://jshint.com/)
       - The following metrics were returned: 
-      - There are 11 functions in this file.
-      - Function with the largest signature takes 2 arguments, while the median is 0.
-      - Largest function has 10 statements in it, while the median is 3.
-      - The most complex function has a cyclomatic complexity value of 4 while the median is 2.
-    - questions.js: No errors were found when passing through the official [Jshint validator](https://jshint.com/)
+        - There are 23 functions in this file.
+        - Function with the largest signature take 1 arguments, while the median is 0.
+        - Largest function has 8 statements in it, while the median is 3.
+        - The most complex function has a cyclomatic complexity value of 8 while the median is 1.
+    - questions.js: No errors were found when passing through the official [Jshint validator](https://jshint.com/). No metrics were returned.
 
 ### Fixed Bugs
 
@@ -158,17 +158,6 @@ The live link can be found here - https://stephhjar.github.io/star-wars-trivia
 - [TinyPNG](https://tinypng.com/) was used to compress images.
 - [Pixlr](https://pixlr.com/x/#editor) was used to edit the logo for use on smaller devices. 
 
-## Other General Project Advice
-
-Below you will find a couple of extra tips that may be helpful when completing your project. Remember that each of these projects will become part of your final portfolio so it’s important to allow enough time to showcase your best work! 
-
-- One of the most basic elements of keeping a healthy commit history is with the commit message. When getting started with your project, read through [this article](https://chris.beams.io/posts/git-commit/) by Chris Beams on How to Write  a Git Commit Message 
-  - Make sure to keep the messages in the imperative mood 
-
-- When naming the files in your project directory, make sure to consider meaningful naming of files, point to specific names and sections of content.
-  - For example, instead of naming an image used ‘image1.png’ consider naming it ‘landing_page_img.png’. This will ensure that there are clear file paths kept. 
-
-- Do some extra research on good and bad coding practices, there are a handful of useful articles to read, consider reviewing the following list when getting started:
-  - [Writing Your Best Code](https://learn.shayhowe.com/html-css/writing-your-best-code/)
-  - [HTML & CSS Coding Best Practices](https://medium.com/@inceptiondj.info/html-css-coding-best-practice-fadb9870a00f)
-  - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html#General)
+### Thank You
+- To the Code Institute Slack community for feedback and support! 
+- To my mentor, Narender, for invaluable feedback throughout the project, and for pushing me to figure out my own solutions! 
