@@ -5,6 +5,7 @@
  let currentQuestion = null;
  let scrollDiv = document.getElementsByClassName("scroll-div")[0];
  let content = document.getElementsByClassName("content")[0];
+ let howToPlay = document.getElementsByClassName("how-to-play")[0];
  let instructions = document.getElementsByClassName("instructions")[0];
  let closeWindow = document.getElementsByClassName("close-window")[0];
  let buttons = document.getElementsByTagName("button");
@@ -20,11 +21,14 @@
  let shareResultsButton = document.getElementsByClassName("share-results")[0];
  let repeatedQuestion = [];
 
+ /**
+  * Waits for the DOM content to load, then adds event listeners to the page
+  */
  document.addEventListener('DOMContentLoaded', () => {
      document.addEventListener("click", startGame, {
          once: true
      });
-     document.getElementsByClassName("how-to-play")[0].addEventListener("click", showInstructions);
+     howToPlay.addEventListener("click", showInstructions);
  });
 
  /**
@@ -55,7 +59,6 @@
   * Generates a random question to populate until all questions have all been asked, at which point results are displayed
   */
  function renderNextQuestion() {
-     console.log("renderNextQuestion is running");
      resetButtons();
      if (isMaximumQuestionsLimitReached()) {
          displayResult();
@@ -105,7 +108,6 @@
   * Pulls a random question from the questions array and prevents repeated questions from being displayed
   */
  function getRandomQuestion() {
-     console.log("getRandomQuestion is running");
      currentQuestion = questions[Math.floor(Math.random() * questions.length)];
      if (isMaximumQuestionsLimitReached()) {
          return false;
