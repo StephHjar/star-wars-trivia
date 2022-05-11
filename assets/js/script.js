@@ -3,24 +3,21 @@
  } from "./questions.js";
 
  let currentQuestion = null;
-
+ let scrollDiv = document.getElementsByClassName("scroll-div")[0];
+ let content = document.getElementsByClassName("content")[0];
  let instructions = document.getElementsByClassName("instructions")[0];
-
  let buttons = document.getElementsByTagName("button");
-
  let questionArea = document.getElementsByClassName("question-area")[0];
-
  let answerButtons = document.getElementsByClassName("answer-btn");
  let buttonA = document.getElementsByClassName("btn-a")[0];
  let buttonB = document.getElementsByClassName("btn-b")[0];
  let buttonC = document.getElementsByClassName("btn-c")[0];
-
  let score = document.getElementsByClassName("score")[0];
  let scoreCount = parseInt(score.innerText);
-
  let actionButtons = document.getElementsByClassName("action-btn");
  let playAgainButton = document.getElementsByClassName("play-again")[0];
  let shareResultsButton = document.getElementsByClassName("share-results")[0];
+ let repeatedQuestion = [];
 
  document.addEventListener("click", startGame, {
      once: true
@@ -29,14 +26,12 @@
  document.getElementsByClassName("how-to-play")[0].addEventListener("click", showInstructions);
  document.getElementsByClassName("close-window")[0].addEventListener("click", closeInstructions);
 
- let repeatedQuestion = [];
-
  /**
   * Initiates gameplay when the player clicks anywhere on the page
   */
  function startGame() {
-     document.getElementsByClassName("scroll-div")[0].style.display = "none";
-     document.getElementsByClassName("content")[0].style.display = "block";
+     scrollDiv.style.display = "none";
+     content.style.display = "block";
      renderNextQuestion();
  }
 
@@ -55,15 +50,21 @@
  }
 
  /**
-  * Populates a random question in the question area and answers in the buttons
+  * Populates a random question in the question area and answers in the buttons, until the questions have all been asked
   */
  function renderNextQuestion() {
+     console.log("renderNextQuestion is running")
      resetButtons();
+     /*if (isMaximumQuestionsLimitReached()) {*/
      if (repeatedQuestion.length >= 20) {
          displayResult();
      } else {
          displayQuestion();
      }
+ }
+
+ function isMaximumQuestionsLimitReached() {
+     if (repeatedQuestion.length >= 20);
  }
 
 
@@ -73,6 +74,9 @@
      buttonA.innerText = currentQuestion.options[0];
      buttonB.innerText = currentQuestion.options[1];
      buttonC.innerText = currentQuestion.options[2];
+     buttonA.ariaLabel = currentQuestion.options[0];
+     buttonB.ariaLabel = currentQuestion.options[1];
+     buttonC.ariaLabel = currentQuestion.options[2];
      handleClickEvent();
  }
 
@@ -90,7 +94,9 @@
   * Pulls a random question from the questions array and prevents repeated questions from being displayed
   */
  function getRandomQuestion() {
+     console.log("getRandomQuestion is running");
      currentQuestion = questions[Math.floor(Math.random() * questions.length)];
+     /*if (isMaximumQuestionsLimitReached()) {*/
      if (repeatedQuestion.length >= 20) {
          return false;
      } else if (repeatedQuestion.indexOf(currentQuestion) >= 0) {
@@ -165,14 +171,52 @@
      score.innerText = ++oldScore;
  }
 
+ function getAvailableResponse(score) {
+     console.log("getAvailableResponse is running");
+     let responses = {
+         "20": questionArea.innerHTML = `You got ${scoreCount} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`,
+         "17": `Great job! You got ${scoreCount} out of 20 questions correct! You've clearly done your training, Jedi Master!`,
+         "13": `You got ${scoreCount} out of 20 questions right. Not bad, Jedi!`,
+         "9": `You scored ${scoreCount} out of 20. You may still be a Padawan, but you're on your way to becoming a Jedi!`,
+         "0": `${scoreCount} out of 20. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`
+     }
+     return responses(score);
+ }
+
  /**
   * Displays the player's final score and presents the player with the option to play again or share their results
   */
  function displayResult() {
-     if (scoreCount >= 20) {
-         questionArea.innerHTML = `You got ${scoreCount} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`;
+     console.log("displayResult is running");
+     switch (scoreCount) {
+         case scoreCount >= 20:
+             console.log("I got 20 out of 20");
+             getAvailableResponse(20);
+             /*questionArea.innerHTML = response;*/
+             break;
+         case scoreCount >= 17 && scoreCount < 20:
+             getAvailableResponse(17);
+             questionArea.innerHTML = response;
+             break;
+         case scoreCount >= 13 && scoreCount < 17:
+             getAvailableResponse(13);
+             questionArea.innerHTML = response;
+             break;
+         case scoreCount >= 9 && scoreCount < 13:
+             getAvailableResponse(9);
+             questionArea.innerHTML = response;
+             break;
+         case scoreCount < 9:
+             getAvailableResponse(0);
+             questionArea.innerHTML = response;
+     }
+     displayActionButtons();
+ }
+
+ /* if (scoreCount >= 20) {
+
      } else if (scoreCount >= 17 && score < 20) {
-         questionArea.innerHTML = `Great job! You got ${scoreCount} out of 20 questions correct! You've clearly done your training, Jedi Master!`;
+         questionArea.innerHTML = ;
      } else if (scoreCount >= 13 && score < 17) {
          questionArea.innerHTML = `You got ${scoreCount} out of 20 questions right. Not bad, Jedi!`;
      } else if (scoreCount >= 9 && score < 13) {
@@ -181,7 +225,7 @@
          questionArea.innerHTML = `${scoreCount} out of 20. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`;
      }
      displayActionButtons();
- }
+ }*/
 
  /**
   * Displays action buttons ("New Game" & "Share Results") and allows the user to initiate their respective functions
@@ -202,7 +246,7 @@
   */
  function newGame() {
      repeatedQuestion.length = 0;
-     document.getElementsByClassName("score")[0].innerText = "0";
+     score.innerText = "0";
      renderNextQuestion();
  }
 
