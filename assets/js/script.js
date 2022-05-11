@@ -236,8 +236,10 @@ function displayActionButtons() {
  * Refreshes the question area and the scoreboard to start a new game
  */
 function newGame() {
-    repeatedQuestion.length = 0;
+    console.log("newGame is running");
+    repeatedQuestion.length = null;
     scoreCount = 0;
+    score.innerText = scoreCount;
     renderNextQuestion();
 }
 

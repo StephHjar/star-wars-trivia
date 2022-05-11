@@ -113,6 +113,8 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 
 - I was getting 3 errors in the [WAVE Accessibility Report](https://wave.webaim.org/) due to having buttons with no content. My 3 answer buttons had no content in the main HTML document, as the answers are populated using JavaScript. I tried to solve this by adding aria-labels within the same JavaScript function, but this didn't resolve the error, and just resulted in redundant aria-labels. I solved it by adding placeholder text in the HTML document ("Answer A", "Answer B", and "Answer C") which will be overwritten by the JavaScript function. 
 
+- If the game was played more than once, the scores became aggregrated on the back end. For example, if I got 6/20 the first time I played, then clicked "Play Again", the score counter would display "0 / 20" as planned. However, as soon as I got a question right, it would add that point to my previous score, so "7 / 20" would appear on the score counter. This is because I was clearing the Text content of the "score" span, but I was not clearing the value of the "scoreCount" variable within the JavaScript. I added an additional line to the newGame function to clear the previous scoreCount, and then use this to populate the scoreboard. This resolved the bug. 
+
 ### Unfixed Bugs
 
 - None
