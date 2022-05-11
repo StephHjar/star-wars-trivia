@@ -68,20 +68,20 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 ## Testing 
 
 ### Manual Testing
-- This page was manually tested for functionality and responsiveness on the following devices: iPad Air, iPhone XR, iPhone 12 Pro Max, MacBookAir, and MacBook Pro. It was manually tested in both Chrome and Safari. 
+- This page was manually tested for functionality and responsiveness on the following devices: iPad Air, iPhone XR, iPhone 12 Pro Max, MacBookAir, and MacBook Pro. It was manually tested in both Chrome and Safari. Testing was completedy by the developer, and her friends and family members.
 
 - Chrome Developer tools were used to test responsiveness - every device option was tested, and I checked all screen sizes from 300px to 3000px. 
 
 - WAVE was used to generate an accessibility report, with no errors found.
-- ![WAVE accessibility report](assets/images/README/wave-accessibility.png)
+  ![WAVE accessibility report](assets/images/README/wave-accessibility.png)
 
-- __Lighthouse Testing__ 
+#### Lighthouse Testing
 - Lighthouse within Chrome Developer Tools was used to test for Performance, Accessibility, Best Practices, and SEO. 
 - Desktop Results: 
-![Desktop Lighthouse Test Results](assets/images/README/lighthouse-desktop.png)
+  ![Desktop Lighthouse Test Results](assets/images/README/lighthouse-desktop.png)
 - Mobile Results: 
-![Mobile Lighthouse Test Results](assets/images/README/lighthouse-mobile.png)
-- Scores for Performance and Best Practices are lower on Mobile because fixed image sizes are not specified (for the header and lightsaber images), which causes longer loading times. While not optimal, this is intentional so that the image size adjusts with the screen size, to make the site responsive. 
+  ![Mobile Lighthouse Test Results](assets/images/README/lighthouse-mobile.png)
+  - Scores for Performance and Best Practices are lower on Mobile because fixed image sizes are not specified (for the header and lightsaber images), which causes longer loading times. While not optimal, this is intentional so that the image size adjusts with the screen size, to make the site responsive. 
 
 ### Validator Testing 
 
@@ -130,7 +130,7 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 
 ### Content 
 
-- All trivia questions were written by the developer. Answers were verified for accuracy on [Wookieepedia](https://starwars.fandom.com/wiki/Main_Page)
+- All trivia questions were written by the developer. Answers were verified for accuracy on [Wookieepedia](https://starwars.fandom.com/wiki/Main_Page).
 - The README structure and suggested content was from [Code Institute's Love Maths README template](https://github.com/Code-Institute-Solutions/readme-love-maths/blob/master/README.md).
 - This article [CSS-Tricks](https://css-tricks.com/perfect-full-page-background-image/) was used for tips on how to make a full-page background image responsive. 
 - [This page](https://www.w3schools.com/howto/howto_css_image_responsive.asp) on W3 Schools was used to learn how to make the logo image responsive.
@@ -145,7 +145,7 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 
 ### Media
 
-- The background photo is from [Shutterstock](https://www.shutterstock.com/image-vector/star-warp-hyperspace-jump-traces-moving-1550816240)
+- The background photo is from [Shutterstock](https://www.shutterstock.com/image-vector/star-warp-hyperspace-jump-traces-moving-1550816240).
 - [CloudConvert](https://cloudconvert.com/) was used to convert all images to WEBP format.
 - The R2D2 icon used in the Favicon is from [Icon-Icons.com](https://icon-icons.com/download/34499/PNG/512/).
 - Lightsaber image in the opening scroll is by Robert W. Schönholz on [Pixabay](https://pixabay.com/users/robertschoenholz-3164230/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2908144>)
