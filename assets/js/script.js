@@ -128,22 +128,30 @@
  }
 
  /**
-  * Handles touch events on answer buttons
+  * Handles touch events on buttons
   */
  function handleTouchEvent() {
-     for (let button of buttons) {
-         button.addEventListener("touchstart", checkAnswer);
-         button.addEventListener("touchend", renderNextQuestion);
+     for (let answerButton of answerButtons) {
+         answerButton.addEventListener("touchstart", checkAnswer);
+         answerButton.addEventListener("touchend", renderNextQuestion);
+     }
+     for (let actionButton of actionButtons) {
+         actionButton.addEventListener("touchstart", styleActionButton);
+         actionButton.addEventListener("touchend", unStyleActionButton)
      }
  }
 
  /**
-  * Handles mouse events on answer buttons
+  * Handles mouse events on buttons
   */
  function handleMouseEvent() {
-     for (let button of buttons) {
-         button.addEventListener("mousedown", checkAnswer);
-         button.addEventListener("mouseup", renderNextQuestion);
+     for (let answerButton of answerButtons) {
+         answerButton.addEventListener("mousedown", checkAnswer);
+         answerButton.addEventListener("mouseup", renderNextQuestion);
+     }
+     for (let actionButton of actionButtons) {
+         actionButton.addEventListener("mousedown", styleActionButton);
+         actionButton.addEventListener("mouseup", unStyleActionButton);
      }
  }
 
@@ -156,13 +164,23 @@
      if (answer === response) {
          this.style.backgroundColor = "green";
          incrementScore();
-     } else if (this === "Play Again") {
-         this.style.backgroundColor = "lightyellow";
-     } else if (response === "Share Results") {
-         this.style.backgroundColor = "lightyellow";
      } else {
          this.style.backgroundColor = "red";
      }
+ }
+
+ /**
+  * Styles action button on mousedown or touchstart
+  */
+ function styleActionButton() {
+     this.style.backgroundColor = "lightyellow";
+ }
+
+ /**
+  * Removes styling from action button on mouseup or touchend
+  */
+ function unStyleActionButton() {
+     this.style.backgroundColor = null;
  }
 
  /**
@@ -209,7 +227,7 @@
   */
  function newGame() {
      repeatedQuestion.length = 0;
-     score.innerText = "0";
+     scoreCount = 0;
      renderNextQuestion();
  }
 
