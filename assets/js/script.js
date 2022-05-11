@@ -172,51 +172,14 @@
      score.innerText = ++scoreCount;
  }
 
- function getAvailableResponse(scoreCount) {
-     console.log("getAvailableResponse is running");
-     let responses = {
-         "20": `You got ${scoreCount} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`,
-         "17": `Great job! You got ${scoreCount} out of 20 questions correct! You've clearly done your training, Jedi Master!`,
-         "13": `You got ${scoreCount} out of 20 questions right. Not bad, Jedi!`,
-         "9": `You scored ${scoreCount} out of 20. You may still be a Padawan, but you're on your way to becoming a Jedi!`,
-         "0": `${scoreCount} out of 20. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`
-     }
-     return responses(questionArea);
- }
-
  /**
   * Displays the player's final score and presents the player with the option to play again or share their results
   */
  function displayResult() {
-     console.log("displayResult is running");
-     console.log(scoreCount);
-     switch (scoreCount) {
-         case scoreCount >= "20":
-             questionArea.innerHTML = `eggs`;
-             break;
-         case scoreCount >= 17 && scoreCount < 20:
-             console.log("I got 17 out of 20");
-             getAvailableResponse(17);
-             break;
-         case scoreCount >= 13 && scoreCount < 17:
-             console.log("I got 13 out of 20");
-             questionArea.innerHTML = getAvailableResponse(13);
-             break;
-         case scoreCount >= 9 && scoreCount < 13:
-             console.log("I got 9 out of 20");
-             questionArea.innerHTML = getAvailableResponse(9);
-             break;
-         case scoreCount < 9:
-             console.log("I got 0 out of 20");
-             questionArea.innerHTML = getAvailableResponse(0);
-     }
-     displayActionButtons();
- }
-
- /* if (scoreCount >= 20) {
-
+     if (scoreCount >= 20) {
+         questionArea.innerHTML = `You got ${scoreCount} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`
      } else if (scoreCount >= 17 && score < 20) {
-         questionArea.innerHTML = ;
+         questionArea.innerHTML = `Great job! You got ${scoreCount} out of 20 questions correct! You've clearly done your training, Jedi Master!`
      } else if (scoreCount >= 13 && score < 17) {
          questionArea.innerHTML = `You got ${scoreCount} out of 20 questions right. Not bad, Jedi!`;
      } else if (scoreCount >= 9 && score < 13) {
@@ -225,7 +188,7 @@
          questionArea.innerHTML = `${scoreCount} out of 20. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`;
      }
      displayActionButtons();
- }*/
+ }
 
  /**
   * Displays action buttons ("New Game" & "Share Results") and allows the user to initiate their respective functions
