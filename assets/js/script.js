@@ -169,20 +169,19 @@
   * Increases the score by one for every correct answer
   */
  function incrementScore() {
-     let oldScore = parseInt(score.innerText);
-     score.innerText = ++oldScore;
+     score.innerText = ++scoreCount;
  }
 
- function getAvailableResponse(score) {
+ function getAvailableResponse(scoreCount) {
      console.log("getAvailableResponse is running");
      let responses = {
-         "20": questionArea.innerHTML = `You got ${scoreCount} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`,
+         "20": `You got ${scoreCount} out of 20 questions correct! Congratulations! You're a Jedi Grand Master!`,
          "17": `Great job! You got ${scoreCount} out of 20 questions correct! You've clearly done your training, Jedi Master!`,
          "13": `You got ${scoreCount} out of 20 questions right. Not bad, Jedi!`,
          "9": `You scored ${scoreCount} out of 20. You may still be a Padawan, but you're on your way to becoming a Jedi!`,
          "0": `${scoreCount} out of 20. I suggest you head to Dagobah to meet Yoda for some training. Better luck next time!`
      }
-     return responses(score);
+     return responses(questionArea);
  }
 
  /**
@@ -190,27 +189,26 @@
   */
  function displayResult() {
      console.log("displayResult is running");
+     console.log(scoreCount);
      switch (scoreCount) {
-         case scoreCount >= 20:
-             console.log("I got 20 out of 20");
-             getAvailableResponse(20);
-             /*questionArea.innerHTML = response;*/
+         case scoreCount >= "20":
+             questionArea.innerHTML = `eggs`;
              break;
          case scoreCount >= 17 && scoreCount < 20:
+             console.log("I got 17 out of 20");
              getAvailableResponse(17);
-             questionArea.innerHTML = response;
              break;
          case scoreCount >= 13 && scoreCount < 17:
-             getAvailableResponse(13);
-             questionArea.innerHTML = response;
+             console.log("I got 13 out of 20");
+             questionArea.innerHTML = getAvailableResponse(13);
              break;
          case scoreCount >= 9 && scoreCount < 13:
-             getAvailableResponse(9);
-             questionArea.innerHTML = response;
+             console.log("I got 9 out of 20");
+             questionArea.innerHTML = getAvailableResponse(9);
              break;
          case scoreCount < 9:
-             getAvailableResponse(0);
-             questionArea.innerHTML = response;
+             console.log("I got 0 out of 20");
+             questionArea.innerHTML = getAvailableResponse(0);
      }
      displayActionButtons();
  }
