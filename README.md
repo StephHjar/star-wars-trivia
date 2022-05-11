@@ -90,7 +90,7 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 - CSS
     - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstephhjar.github.io%2Fstar-wars-trivia%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - JavaScript
-    - script.js: When first passed, 1 extra semicolon and 3 missing semicolons were found. On second pass, no errors were found when passing through the official [Jshint validator](https://jshint.com/)
+    - script.js: When first passed, 1 extra semicolon and 3 missing semicolons were found. On second pass, no errors were found when passing through the official [Jshint validator](https://jshint.com/). A small bug was then fixed, and the same results were received upon running through the Jshint validator a third time.
       - The following metrics were returned: 
         - There are 23 functions in this file.
         - Function with the largest signature take 1 arguments, while the median is 0.
