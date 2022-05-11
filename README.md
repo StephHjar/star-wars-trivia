@@ -2,9 +2,10 @@
 
 Star Wars Legends Trivia is an online quiz for Star Wars fans to test their knowledge of Legends material (previously known as the Expanded Universe, i.e. spinoff books and comics from before the newer Disney movies were released, which are now no longer considered part of the Star Wars canon). The site is targeted towards fans of Star Wars (especially superfans of this more niche part of Star Wars fandom), and fans of trivia games in general. 
 
-The Star Wars Legends Trivia site is a fully responsive website that allows players to answer multiple choice trivia questions on desktop, tablet, or mobile. Players will see their score as they play, and will have the option to replay the trivia game as often as they like. They can also share their results after completing the quiz. 
+The Star Wars Legends Trivia site is a fully responsive website that allows players to answer multiple choice trivia questions on desktop, tablet, or mobile. Players will see their score as they play, and will have the option to replay the trivia game as often as they like. They can also share their results after completing the quiz. Questions are displayed in a random order for replayability. 
 
-![Responsive Mockup](LINK TO GO HERE)
+Responsive Mockup from [ui.dev](https://ui.dev/amiresponsive):
+![Responsive Mockup](assets/images/README/responsive-layout.png)
 
 ## Wireframes
 
