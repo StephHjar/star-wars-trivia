@@ -68,7 +68,7 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 ## Testing 
 
 ### Manual Testing
-- This page was manually tested for functionality and responsiveness on the following devices: iPad Air, iPhone XR, iPhone 12 Pro Max, MacBookAir, and MacBook Pro. It was manually tested in both Chrome and Safari. Testing was completedy by the developer, and her friends and family members.
+- This page was manually tested for functionality and responsiveness on the following devices: iPad Air, iPhone XR, iPhone 12 Pro Max, MacBookAir, and MacBook Pro. It was manually tested in both Chrome and Safari. Testing was completed by the developer, and her friends and family members.
 
 - Chrome Developer tools were used to test responsiveness - every device option was tested, and I checked all screen sizes from 300px to 3000px. 
 
@@ -158,4 +158,5 @@ Wireframes were created before development, for desktop, tablet, and mobile. Thi
 
 ### Thank You
 - To the Code Institute Slack community for feedback and support! 
-- To my mentor, Narender, for invaluable feedback throughout the project, and for pushing me to figure out my own solutions! 
+- To my mentor, Narender, for invaluable feedback throughout the project, and for pushing me to figure out my own solutions!
+- To my very patient fiancé, Jonathan, for playing a trivia game at least 25 times for a series of books he has not read! 
