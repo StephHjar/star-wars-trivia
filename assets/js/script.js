@@ -6,6 +6,7 @@
  let scrollDiv = document.getElementsByClassName("scroll-div")[0];
  let content = document.getElementsByClassName("content")[0];
  let instructions = document.getElementsByClassName("instructions")[0];
+ let closeWindow = document.getElementsByClassName("close-window")[0];
  let buttons = document.getElementsByTagName("button");
  let questionArea = document.getElementsByClassName("question-area")[0];
  let answerButtons = document.getElementsByClassName("answer-btn");
@@ -19,12 +20,14 @@
  let shareResultsButton = document.getElementsByClassName("share-results")[0];
  let repeatedQuestion = [];
 
- document.addEventListener("click", startGame, {
-     once: true
- });
+ document.addEventListener('DOMContentLoaded', () => {
+     document.addEventListener("click", startGame, {
+         once: true
+     });
 
- document.getElementsByClassName("how-to-play")[0].addEventListener("click", showInstructions);
- document.getElementsByClassName("close-window")[0].addEventListener("click", closeInstructions);
+     document.getElementsByClassName("how-to-play")[0].addEventListener("click", showInstructions);
+
+ });
 
  /**
   * Initiates gameplay when the player clicks anywhere on the page
@@ -40,6 +43,7 @@
   */
  function showInstructions() {
      instructions.style.display = "block";
+     closeWindow.addEventListener("click", closeInstructions);
  }
 
  /**
