@@ -113,14 +113,14 @@
   * Checks whether a device is a touch screen device. Code from Codeburst.io, credit in README 
   */
  window.addEventListener('touchstart', function onFirstTouch() {
-     window.IS_TOUCH_ENABLED = true;
+     window.isTouchScreen = true;
  }, false);
 
  /**
   * Handles button clicks and touch events, depending on the type of device
   */
  function handleClickEvent() {
-     if (window.IS_TOUCH_ENABLED) {
+     if (window.isTouchScreen) {
          handleTouchEvent();
      } else {
          handleMouseEvent();
